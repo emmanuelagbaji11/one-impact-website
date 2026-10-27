@@ -1,0 +1,1657 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f36b21">
+
+  <title>One Impact | Social Development Network</title>
+
+  <meta name="description" content="One Impact Social Development Network works towards a more inclusive, empowered and sustainable future for communities.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --orange: #f36b21;
+      --orange-dark: #d9510d;
+      --orange-light: #fff0e5;
+      --cream: #fffaf5;
+      --white: #ffffff;
+      --dark: #242424;
+      --text: #66615d;
+      --border: #eee8e2;
+      --radius: 20px;
+      --shadow: 0 15px 45px rgba(53, 35, 20, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--orange-dark);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 2px;
+      background: var(--orange);
+    }
+
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.15;
+      letter-spacing: -1.4px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 47px);
+      font-weight: 800;
+    }
+
+    .section-description {
+      color: var(--text);
+      max-width: 560px;
+      margin-top: 18px;
+      font-size: 15px;
+    }
+
+    .section-heading {
+      margin-bottom: 48px;
+    }
+
+    .section-heading.center {
+      text-align: center;
+    }
+
+    .section-heading.center .eyebrow {
+      justify-content: center;
+    }
+
+    .section-heading.center .section-description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 52px;
+      padding: 0 25px;
+      border-radius: 7px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 800;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: #e4d8ce;
+      background: var(--white);
+      color: var(--dark);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--orange);
+      color: var(--orange-dark);
+    }
+
+    .arrow {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    /* Navigation */
+
+    .navbar {
+      height: 86px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid rgba(238, 232, 226, 0.8);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      background: var(--orange);
+      color: white;
+      border-radius: 12px 12px 12px 3px;
+      display: grid;
+      place-items: center;
+      font-family: "Manrope", sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .brand-name {
+      font-family: "Manrope", sans-serif;
+      font-size: 17px;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+    }
+
+    .brand-name span {
+      display: block;
+      margin-top: 5px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--orange-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      color: #504c49;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--orange-dark);
+    }
+
+    .nav-cta {
+      min-height: 44px;
+      padding: 0 19px;
+      font-size: 12px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 43px;
+      height: 43px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      border-radius: 8px;
+      color: var(--dark);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 55px 0 65px;
+      background:
+        radial-gradient(ellipse at 5% 0%, #fff0e6 0%, transparent 37%),
+        linear-gradient(180deg, #fffdfb 0%, #ffffff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.94fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .hero-copy {
+      padding: 28px 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: #fff0e5;
+      border: 1px solid #ffddc5;
+      border-radius: 30px;
+      padding: 9px 14px;
+      color: #a7440e;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--orange);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 5.2vw, 65px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -3px;
+      max-width: 620px;
+    }
+
+    .hero h1 .highlight {
+      color: var(--orange);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-description {
+      margin-top: 25px;
+      color: var(--text);
+      max-width: 490px;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 32px;
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .note-icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      border-radius: 50%;
+      font-size: 16px;
+    }
+
+    .hero-visual {
+      min-width: 0;
+      position: relative;
+      padding: 0 0 25px 20px;
+    }
+
+    .hero-image {
+      height: 510px;
+      border-radius: 170px 170px 20px 20px;
+      overflow: hidden;
+      position: relative;
+      background: #f5e2d3;
+    }
+
+    .hero-image img {
+      height: 100%;
+      object-position: center;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 45% 0 0;
+      background: linear-gradient(transparent, rgba(30, 20, 13, 0.48));
+      pointer-events: none;
+    }
+
+    .image-caption {
+      position: absolute;
+      z-index: 2;
+      left: 25px;
+      right: 25px;
+      bottom: 22px;
+      color: white;
+    }
+
+    .image-caption strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 21px;
+      line-height: 1.3;
+    }
+
+    .image-caption span {
+      display: block;
+      margin-top: 5px;
+      font-size: 11px;
+      opacity: 0.9;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: -5px;
+      bottom: 65px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 17px 19px;
+      background: var(--white);
+      border-radius: 13px;
+      box-shadow: var(--shadow);
+      max-width: 235px;
+    }
+
+    .floating-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      background: var(--orange-light);
+      border-radius: 10px;
+      color: var(--orange-dark);
+      font-size: 21px;
+      flex-shrink: 0;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .floating-card span {
+      display: block;
+      color: var(--text);
+      font-size: 10px;
+      margin-top: 2px;
+    }
+
+    .hero-decoration {
+      position: absolute;
+      z-index: -1;
+      right: -22px;
+      top: 35px;
+      width: 95px;
+      height: 95px;
+      border: 1px solid #f6b78e;
+      border-radius: 50%;
+    }
+
+    /* Intro strip */
+
+    .trust-strip {
+      padding: 26px 0;
+      background: var(--orange);
+      color: white;
+    }
+
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .trust-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-weight: 800;
+      opacity: 0.9;
+    }
+
+    .trust-item {
+      font-family: "Manrope", sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1fr;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .about-visual {
+      position: relative;
+      padding: 0 0 35px 25px;
+    }
+
+    .about-image {
+      height: 450px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #f4e7da;
+    }
+
+    .about-image img {
+      height: 100%;
+    }
+
+    .about-stamp {
+      position: absolute;
+      right: -10px;
+      bottom: 0;
+      width: 160px;
+      padding: 23px 18px;
+      background: var(--orange);
+      color: white;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-stamp strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .about-stamp span {
+      display: block;
+      margin-top: 8px;
+      font-size: 10px;
+      opacity: 0.9;
+    }
+
+    .about-copy h2 {
+      max-width: 520px;
+    }
+
+    .about-copy > p {
+      margin-top: 22px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    .value-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+      margin: 27px 0 30px;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .value-check {
+      width: 23px;
+      height: 23px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      font-size: 12px;
+    }
+
+    /* Programmes */
+
+    .programmes {
+      background: var(--cream);
+    }
+
+    .programme-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 23px;
+    }
+
+    .programme-card {
+      background: var(--white);
+      border: 1px solid #f1ebe5;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .programme-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .programme-image {
+      height: 220px;
+      overflow: hidden;
+      background: #f3e5d9;
+    }
+
+    .programme-image img {
+      height: 100%;
+      transition: transform 0.4s ease;
+    }
+
+    .programme-card:hover .programme-image img {
+      transform: scale(1.05);
+    }
+
+    .programme-content {
+      padding: 25px 23px 26px;
+    }
+
+    .programme-number {
+      color: var(--orange-dark);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    .programme-content h3 {
+      margin-top: 11px;
+      font-size: 20px;
+      letter-spacing: -0.6px;
+    }
+
+    .programme-content p {
+      margin-top: 12px;
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 20px;
+      color: var(--orange-dark);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .text-link span {
+      transition: transform 0.2s ease;
+    }
+
+    .text-link:hover span {
+      transform: translateX(4px);
+    }
+
+    /* Impact */
+
+    .impact {
+      background: var(--orange);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .impact::before {
+      content: "";
+      position: absolute;
+      right: -140px;
+      top: -210px;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 45px rgba(255, 255, 255, 0.04),
+        0 0 0 90px rgba(255, 255, 255, 0.035);
+    }
+
+    .impact .eyebrow {
+      color: #fff1e6;
+    }
+
+    .impact .eyebrow::before {
+      background: white;
+    }
+
+    .impact .section-description {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .impact-heading {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .impact-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .impact-stat {
+      padding: 26px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.38);
+    }
+
+    .impact-stat strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(32px, 4vw, 48px);
+      letter-spacing: -2px;
+      line-height: 1.2;
+    }
+
+    .impact-stat span {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .impact-note {
+      position: relative;
+      z-index: 1;
+      margin-top: 22px;
+      font-size: 10px;
+      opacity: 0.85;
+    }
+
+    /* Get involved */
+
+    .involved-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .involved-card {
+      padding: 36px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .involved-card.orange-card {
+      background: var(--orange-light);
+      border-color: #ffddc5;
+    }
+
+    .involved-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: white;
+      color: var(--orange-dark);
+      font-size: 22px;
+    }
+
+    .involved-card h3 {
+      margin-top: 22px;
+      font-size: 25px;
+    }
+
+    .involved-card p {
+      margin-top: 13px;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .involved-card .btn {
+      margin-top: 22px;
+    }
+
+    /* Contact CTA */
+
+    .contact-cta {
+      padding: 0 0 100px;
+    }
+
+    .cta-box {
+      padding: 55px;
+      background: var(--dark);
+      color: white;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      right: 180px;
+      top: -170px;
+      border: 1px solid rgba(243, 107, 33, 0.5);
+      border-radius: 50%;
+      box-shadow: 0 0 0 35px rgba(243, 107, 33, 0.06);
+    }
+
+    .cta-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-copy .eyebrow {
+      color: #ffb58b;
+    }
+
+    .cta-copy h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      max-width: 590px;
+    }
+
+    .cta-copy p {
+      color: #c9c5c1;
+      margin-top: 13px;
+      font-size: 13px;
+    }
+
+    .cta-box .btn {
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+
+    .footer {
+      padding: 65px 0 25px;
+      background: #fffaf5;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.8fr 0.8fr 1fr;
+      gap: 45px;
+      padding-bottom: 45px;
+    }
+
+    .footer-about p {
+      max-width: 290px;
+      margin-top: 20px;
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .footer h4 {
+      margin-bottom: 19px;
+      font-family: "Manrope", sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .footer-links a,
+    .footer-contact p {
+      color: var(--text);
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange-dark);
+    }
+
+    .footer-contact p + p {
+      margin-top: 12px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--text);
+      font-size: 10px;
+    }
+
+    .footer-bottom strong {
+      color: var(--orange-dark);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 1050px) {
+      .nav-links {
+        gap: 15px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+
+      .hero-image {
+        height: 450px;
+      }
+
+      .about-grid {
+        gap: 45px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .section {
+        padding: 75px 0;
+      }
+
+      .navbar {
+        height: 75px;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 74px;
+        background: white;
+        padding: 20px 5% 25px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 12px 0;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding-top: 35px;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 10px 0 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 8vw, 62px);
+      }
+
+      .hero-visual {
+        width: min(100%, 560px);
+        margin: 0 auto;
+      }
+
+      .hero-image {
+        height: 470px;
+      }
+
+      .trust-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .trust-label {
+        width: 100%;
+      }
+
+      .about-visual {
+        width: min(100%, 560px);
+        margin: 0 auto;
+      }
+
+      .programme-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+      }
+
+      .cta-box {
+        padding: 38px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: 90%;
+      }
+
+      .brand-mark {
+        width: 39px;
+        height: 39px;
+      }
+
+      .brand-name {
+        font-size: 15px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-image {
+        height: 390px;
+        border-radius: 130px 130px 16px 16px;
+      }
+
+      .floating-card {
+        left: -3px;
+        bottom: 47px;
+        padding: 12px;
+        max-width: 205px;
+      }
+
+      .floating-icon {
+        width: 36px;
+        height: 36px;
+      }
+
+      .about-image {
+        height: 350px;
+      }
+
+      .about-stamp {
+        width: 135px;
+        right: -5px;
+        padding: 17px 14px;
+      }
+
+      .value-list {
+        grid-template-columns: 1fr;
+      }
+
+      .programme-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .programme-image {
+        height: 230px;
+      }
+
+      .impact-grid {
+        gap: 12px 22px;
+      }
+
+      .impact-stat strong {
+        font-size: 35px;
+      }
+
+      .impact-stat span {
+        font-size: 11px;
+      }
+
+      .involved-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .involved-card {
+        padding: 27px;
+      }
+
+      .cta-box {
+        padding: 30px 24px;
+      }
+
+      .cta-box .btn {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-inner">
+
+      <a href="index.html" class="brand" aria-label="One Impact home">
+        <div class="brand-mark">O</div>
+        <div class="brand-name">
+          ONE IMPACT
+          <span>Social Development Network</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks">
+        ☰
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programmes.html">Programmes</a></li>
+          <li><a href="impact.html">Our Impact</a></li>
+          <li><a href="partners.html">Partners</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="btn btn-primary nav-cta">
+        Get Involved <span class="arrow">↗</span>
+      </a>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Building a better future, together
+          </div>
+
+          <h1>
+            Creating change.<br>
+            Empowering people.<br>
+            Inspiring <span class="highlight">impact.</span>
+          </h1>
+
+          <p class="hero-description">
+            We believe every community deserves the opportunity to thrive.
+            Through social development, inclusive initiatives and community
+            engagement, we work towards a future where everyone can make a difference.
+          </p>
+
+          <div class="hero-actions">
+            <a href="about.html" class="btn btn-primary">
+              Discover Our Mission <span class="arrow">↗</span>
+            </a>
+
+            <a href="programmes.html" class="btn btn-outline">
+              Explore Our Work
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <span class="note-icon">✳</span>
+            <span>People-centred development. Lasting change.</span>
+          </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+          <div class="hero-decoration"></div>
+
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1100&q=85"
+              alt="Community members coming together for a shared initiative"
+              fetchpriority="high"
+            >
+
+            <div class="image-caption">
+              <strong>Stronger communities start with opportunity.</strong>
+              <span>Working together for meaningful social change.</span>
+            </div>
+          </div>
+
+          <div class="floating-card">
+            <div class="floating-icon">✳</div>
+            <div>
+              <strong>One shared vision</strong>
+              <span>A brighter future for every community.</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CORE VALUES STRIP -->
+    <section class="trust-strip" aria-label="Our approach">
+      <div class="container trust-inner">
+        <span class="trust-label">What guides us</span>
+        <span class="trust-item">Inclusion</span>
+        <span class="trust-item">Empowerment</span>
+        <span class="trust-item">Collaboration</span>
+        <span class="trust-item">Sustainability</span>
+      </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about-preview">
+      <div class="container about-grid">
+
+        <div class="about-visual">
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1000&q=85"
+              alt="People collaborating to support a community initiative"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="about-stamp">
+            <strong>Every person matters. Every action counts.</strong>
+            <span>Our commitment to positive change.</span>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">Who We Are</span>
+
+          <h2>Driven by purpose. United by impact.</h2>
+
+          <p>
+            One Impact Social Development Network is presented here as a
+            people-centred organisation committed to supporting communities
+            and advancing inclusive social development.
+          </p>
+
+          <p>
+            We believe meaningful progress begins when people have access
+            to opportunities, the resources to grow and a voice in decisions
+            that affect their lives. Our approach puts people and communities
+            at the heart of lasting change.
+          </p>
+
+          <div class="value-list">
+            <div class="value-item">
+              <span class="value-check">✓</span>
+              <span>Community empowerment</span>
+            </div>
+
+            <div class="value-item">
+              <span class="value-check">✓</span>
+              <span>Inclusive development</span>
+            </div>
+
+            <div class="value-item">
+              <span class="value-check">✓</span>
+              <span>Equal opportunities</span>
+            </div>
+
+            <div class="value-item">
+              <span class="value-check">✓</span>
+              <span>Sustainable progress</span>
+            </div>
+          </div>
+
+          <a href="about.html" class="btn btn-primary">
+            Learn More About Us <span class="arrow">↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROGRAMMES SECTION -->
+    <section class="section programmes" id="programmes-preview">
+      <div class="container">
+
+        <div class="section-heading center">
+          <span class="eyebrow">Our Focus Areas</span>
+          <h2>Turning purpose into action.</h2>
+          <p class="section-description">
+            Explore the areas through which social development organisations
+            can support people, strengthen communities and create opportunities.
+            These focus areas can be tailored to our confirmed programmes.
+          </p>
+        </div>
+
+        <div class="programme-grid">
+
+          <article class="programme-card">
+            <div class="programme-image">
+              <img
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+                alt="Students learning together in a classroom"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="programme-content">
+              <span class="programme-number">01 / EDUCATION</span>
+              <h3>Education & Learning</h3>
+              <p>
+                Promoting access to learning, personal development and
+                opportunities that help individuals reach their potential.
+              </p>
+              <a href="programmes.html" class="text-link">
+                Explore focus area <span>→</span>
+              </a>
+            </div>
+          </article>
+
+
+          <article class="programme-card">
+            <div class="programme-image">
+              <img
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+                alt="Healthcare professional supporting a patient"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="programme-content">
+              <span class="programme-number">02 / WELLBEING</span>
+              <h3>Health & Wellbeing</h3>
+              <p>
+                Supporting awareness, healthier communities and initiatives
+                that promote wellbeing and quality of life.
+              </p>
+              <a href="programmes.html" class="text-link">
+                Explore focus area <span>→</span>
+              </a>
+            </div>
+          </article>
+
+
+          <article class="programme-card">
+            <div class="programme-image">
+              <img
+                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80"
+                alt="Young people collaborating in a group"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="programme-content">
+              <span class="programme-number">03 / OPPORTUNITY</span>
+              <h3>Youth Empowerment</h3>
+              <p>
+                Encouraging young people to build skills, participate in
+                their communities and pursue meaningful opportunities.
+              </p>
+              <a href="programmes.html" class="text-link">
+                Explore focus area <span>→</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align:center; margin-top:38px;">
+          <a href="programmes.html" class="btn btn-outline">
+            View All Programmes <span class="arrow">↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- IMPACT SECTION -->
+    <section class="section impact" id="impact-preview">
+      <div class="container">
+
+        <div class="impact-heading">
+          <span class="eyebrow">Our Impact</span>
+          <h2>Real progress begins with a shared commitment.</h2>
+          <p class="section-description">
+            Lasting social change is built through meaningful partnerships,
+            community participation and consistent action.
+          </p>
+        </div>
+
+        <div class="impact-grid">
+
+          <div class="impact-stat">
+            <strong>01</strong>
+            <span>People at the centre</span>
+          </div>
+
+          <div class="impact-stat">
+            <strong>02</strong>
+            <span>Shared responsibility</span>
+          </div>
+
+          <div class="impact-stat">
+            <strong>03</strong>
+            <span>Collaborative action</span>
+          </div>
+
+          <div class="impact-stat">
+            <strong>∞</strong>
+            <span>Possibilities for change</span>
+          </div>
+
+        </div>
+
+        <p class="impact-note">
+          These are design elements, not reported performance statistics.
+          Verified organisational impact figures can replace them.
+        </p>
+
+        <div style="margin-top:30px;">
+          <a href="impact.html" class="btn btn-outline"
+            style="border-color:white; background:transparent; color:white;">
+            Discover Our Impact <span class="arrow">↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- GET INVOLVED SECTION -->
+    <section class="section" id="get-involved">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Be Part of the Change</span>
+          <h2>Progress happens when we work together.</h2>
+          <p class="section-description">
+            Meaningful development takes people who care, organisations
+            willing to collaborate and communities ready to create change.
+          </p>
+        </div>
+
+        <div class="involved-grid">
+
+          <article class="involved-card orange-card">
+            <div class="involved-icon">↗</div>
+            <h3>Partner With Us</h3>
+            <p>
+              Explore opportunities to collaborate on initiatives that
+              support communities and advance shared development goals.
+            </p>
+            <a href="partners.html" class="btn btn-primary">
+              Become a Partner <span class="arrow">↗</span>
+            </a>
+          </article>
+
+          <article class="involved-card">
+            <div class="involved-icon">✳</div>
+            <h3>Connect With Us</h3>
+            <p>
+              Have a question, an idea or an opportunity to make a difference?
+              We'd welcome a conversation about working together.
+            </p>
+            <a href="contact.html" class="btn btn-outline">
+              Get in Touch <span class="arrow">↗</span>
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT CALL TO ACTION -->
+    <section class="contact-cta">
+      <div class="container">
+        <div class="cta-box">
+
+          <div class="cta-copy">
+            <span class="eyebrow">Let's Make a Difference</span>
+            <h2>A better future is something we build together.</h2>
+            <p>Let's connect, collaborate and work towards meaningful change.</p>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary">
+            Contact Our Team <span class="arrow">↗</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-about">
+          <a href="index.html" class="brand">
+            <div class="brand-mark">O</div>
+            <div class="brand-name">
+              ONE IMPACT
+              <span>Social Development Network</span>
+            </div>
+          </a>
+
+          <p>
+            Working towards inclusive social development, stronger
+            communities and opportunities for meaningful change.
+          </p>
+        </div>
+
+
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
+            <li><a href="impact.html">Our Impact</a></li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h4>Get Involved</h4>
+          <ul class="footer-links">
+            <li><a href="partners.html">Our Partners</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Collaborate</a></li>
+          </ul>
+        </div>
+
+
+        <div class="footer-contact">
+          <h4>Let's Connect</h4>
+          <p>Interested in our work?</p>
+          <p>Visit our contact page to reach our team.</p>
+          <a href="contact.html" class="text-link">
+            Contact Us <span>→</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> One Impact Social Development Network.</span>
+        <span>Designed with <strong>purpose</strong>.</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    document.querySelectorAll("#navLinks a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+```
