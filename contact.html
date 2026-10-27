@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | One Impact Social Development Network</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --orange: #f47721;
+            --orange-dark: #d95d0b;
+            --light-orange: #fff3e9;
+            --white: #ffffff;
+            --dark: #292929;
+            --gray: #666666;
+            --light-gray: #f8f8f8;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* Navigation */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            color: var(--orange);
+            font-size: 21px;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .logo span {
+            display: block;
+            color: var(--dark);
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--orange);
+        }
+
+        .nav-links .contact-link {
+            background: var(--orange);
+            color: var(--white);
+            padding: 11px 18px;
+            border-radius: 5px;
+        }
+
+        .nav-links .contact-link:hover {
+            background: var(--orange-dark);
+            color: var(--white);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(120deg, #f47721, #ff9a50);
+            color: var(--white);
+            padding: 85px 0;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.18);
+            padding: 7px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+            color: #fffaf6;
+        }
+
+        /* Contact section */
+        .contact-section {
+            padding: 75px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading .label {
+            color: var(--orange-dark);
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 2px;
+            font-weight: 800;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(28px, 4vw, 38px);
+            line-height: 1.3;
+            margin: 12px 0;
+        }
+
+        .section-heading p {
+            color: var(--gray);
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 35px;
+            align-items: start;
+        }
+
+        /* Contact information */
+        .contact-info {
+            background: var(--light-orange);
+            border-radius: 12px;
+            padding: 35px;
+        }
+
+        .contact-info h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .contact-info > p {
+            color: var(--gray);
+            margin-bottom: 28px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-icon {
+            min-width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--orange);
+            color: var(--white);
+            border-radius: 9px;
+            font-size: 20px;
+        }
+
+        .info-item h4 {
+            margin-bottom: 4px;
+        }
+
+        .info-item p {
+            color: var(--gray);
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .info-item a {
+            color: var(--orange-dark);
+        }
+
+        /* Contact form */
+        .contact-form {
+            padding: 35px;
+            background: var(--white);
+            border: 1px solid #eeeeee;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .contact-form h3 {
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .contact-form > p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 19px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #dddddd;
+            border-radius: 6px;
+            font: inherit;
+            font-size: 14px;
+            background: var(--white);
+            color: var(--dark);
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(244, 119, 33, 0.12);
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            padding: 15px 20px;
+            background: var(--orange);
+            color: var(--white);
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--orange-dark);
+        }
+
+        .form-note {
+            margin-top: 12px;
+            color: var(--gray);
+            font-size: 12px;
+        }
+
+        /* Call to action */
+        .cta {
+            background: var(--orange);
+            color: var(--white);
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .cta h2 {
+            font-size: clamp(27px, 4vw, 37px);
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: auto;
+            color: #fffaf6;
+        }
+
+        /* Footer */
+        footer {
+            background: #242424;
+            color: var(--white);
+            padding: 45px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 35px;
+            margin-bottom: 35px;
+        }
+
+        .footer-about h3 {
+            color: var(--orange);
+            font-size: 21px;
+            line-height: 1.4;
+            margin-bottom: 14px;
+        }
+
+        footer p {
+            color: #d0d0d0;
+            font-size: 14px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #d0d0d0;
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange);
+        }
+
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 18px;
+            text-align: center;
+            color: #c5c5c5;
+            font-size: 13px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 900px) {
+            .navbar {
+                flex-direction: column;
+                padding: 18px 0;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 13px 18px;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+            .contact-section {
+                padding: 55px 0;
+            }
+
+            .form-row,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 25px;
+            }
+
+            .nav-links {
+                gap: 10px 14px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .nav-links .contact-link {
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                ONE IMPACT
+                <span>Social Development Network</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programmes.html">Programmes</a>
+                <a href="impact.html">Our Impact</a>
+                <a href="partners.html">Partners</a>
+                <a href="contact.html" class="contact-link active">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container">
+                <span class="eyebrow">GET IN TOUCH</span>
+
+                <h1>We Would Love to Hear From You</h1>
+
+                <p>
+                    Have a question, partnership idea or interest in our
+                    work? Get in touch with One Impact Social Development
+                    Network. We welcome conversations about community
+                    development and opportunities to work together.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="label">Contact Our Team</span>
+
+                    <h2>Let's Start a Conversation</h2>
+
+                    <p>
+                        Send us a message about your enquiry, a potential
+                        partnership or how you would like to engage with
+                        our work.
+                    </p>
+                </div>
+
+                <div class="contact-layout">
+
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+
+                        <p>
+                            We welcome enquiries from individuals,
+                            organizations, institutions and potential
+                            partners interested in social development.
+                        </p>
+
+                        <div class="info-item">
+                            <div class="info-icon" aria-hidden="true">✉</div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>
+                                    Please use the contact form to send
+                                    your enquiry.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon" aria-hidden="true">🤝</div>
+                            <div>
+                                <h4>Partnerships</h4>
+                                <p>
+                                    Contact us to discuss potential
+                                    collaborations and shared initiatives.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon" aria-hidden="true">🌍</div>
+                            <div>
+                                <h4>Our Focus</h4>
+                                <p>
+                                    Community development, empowerment,
+                                    inclusion and sustainable social change.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+
+                        <p>
+                            Complete the form below with your details
+                            and enquiry.
+                        </p>
+
+                        <form id="contactForm">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Your full name"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="you@example.com"
+                                        required
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="organization">
+                                    Organization (Optional)
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="organization"
+                                    name="organization"
+                                    placeholder="Your organization"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Enquiry Type *</label>
+
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select an enquiry type</option>
+                                    <option value="General Enquiry">General Enquiry</option>
+                                    <option value="Partnership">Partnership Opportunity</option>
+                                    <option value="Programmes">Our Programmes</option>
+                                    <option value="Volunteering">Volunteering</option>
+                                    <option value="Support">Support and Collaboration</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message *</label>
+
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Tell us how we can help..."
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                Send Message
+                            </button>
+
+                            <p class="form-note">
+                                Please note: this form needs to be connected
+                                to a form service or email system before
+                                messages can be delivered to the organization.
+                            </p>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Let's Make a Difference Together</h2>
+
+                <p>
+                    Strong communities are built through communication,
+                    collaboration and shared commitment. We look forward
+                    to connecting with you.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>One Impact Social Development Network</h3>
+
+                    <p>
+                        Working towards inclusive communities, meaningful
+                        opportunities and sustainable social development.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="programmes.html">Programmes</a>
+                    <a href="impact.html">Our Impact</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <a href="partners.html">Our Partners</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; <span id="year"></span>
+                One Impact Social Development Network.
+                All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        document.getElementById("contactForm").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                alert(
+                    "Thank you for contacting us. This form is not connected " +
+                    "to an email service yet, so your message has not been sent. " +
+                    "Please contact the organization through its verified contact details."
+                );
+            }
+        );
+    </script>
+
+</body>
+</html>
