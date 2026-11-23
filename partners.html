@@ -1,9 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Partners | One Impact Social Development Network</title>
+
+    <title>Our Partners | One Impact Social Development Network</title>
+
     <style>
         * {
             margin: 0;
@@ -19,10 +22,6 @@
             --dark: #292929;
             --gray: #666666;
             --light-gray: #f8f8f8;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
@@ -43,9 +42,10 @@
         }
 
         /* Navigation */
+
         header {
             background: var(--white);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -105,16 +105,17 @@
         }
 
         /* Hero */
+
         .hero {
             background: linear-gradient(120deg, #f47721, #ff9a50);
             color: var(--white);
-            padding: 90px 0;
+            padding: 100px 0;
             text-align: center;
         }
 
-        .hero .eyebrow {
+        .eyebrow {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.18);
+            background: rgba(255,255,255,0.18);
             padding: 7px 16px;
             border-radius: 30px;
             font-size: 13px;
@@ -135,7 +136,8 @@
             color: #fffaf6;
         }
 
-        /* General sections */
+        /* Sections */
+
         section {
             padding: 75px 0;
         }
@@ -164,31 +166,68 @@
             color: var(--gray);
         }
 
-        /* Impact priorities */
-        .priorities {
-            background: var(--white);
+        /* Introduction */
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
 
-        .priority-grid {
+        .intro-text h2 {
+            font-size: 34px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .intro-panel {
+            background: var(--light-orange);
+            padding: 40px;
+            border-radius: 14px;
+            border-left: 6px solid var(--orange);
+        }
+
+        .intro-panel h3 {
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .intro-panel p {
+            color: var(--gray);
+        }
+
+        /* Partnership values */
+
+        .values {
+            background: var(--light-gray);
+        }
+
+        .values-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
-        .priority-card {
-            padding: 32px 27px;
-            border: 1px solid #f0e6df;
-            border-radius: 12px;
+        .value-card {
             background: var(--white);
+            padding: 32px 27px;
+            border-radius: 12px;
+            border: 1px solid #f0e6df;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .priority-card:hover {
+        .value-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(100, 60, 30, 0.09);
+            box-shadow: 0 12px 30px rgba(100,60,30,0.09);
         }
 
-        .priority-icon {
+        .value-icon {
             width: 58px;
             height: 58px;
             display: flex;
@@ -200,116 +239,99 @@
             margin-bottom: 20px;
         }
 
-        .priority-card h3 {
+        .value-card h3 {
             font-size: 20px;
             margin-bottom: 12px;
         }
 
-        .priority-card p {
+        .value-card p {
             color: var(--gray);
             font-size: 15px;
         }
 
-        /* Our approach */
-        .approach {
-            background: var(--light-orange);
-        }
+        /* Partner spaces */
 
-        .approach-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 55px;
-            align-items: center;
-        }
-
-        .approach-copy .label {
-            color: var(--orange-dark);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 13px;
-            font-weight: 800;
-        }
-
-        .approach-copy h2 {
-            font-size: clamp(28px, 4vw, 39px);
-            line-height: 1.25;
-            margin: 13px 0 20px;
-        }
-
-        .approach-copy p {
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .approach-list {
-            list-style: none;
-            margin-top: 22px;
-        }
-
-        .approach-list li {
-            margin-bottom: 13px;
-            font-weight: 600;
-        }
-
-        .approach-list li::before {
-            content: "✓";
-            color: var(--orange-dark);
-            font-weight: 900;
-            margin-right: 10px;
-        }
-
-        .approach-panel {
-            background: var(--white);
-            padding: 35px;
-            border-radius: 14px;
-            border-left: 6px solid var(--orange);
-            box-shadow: 0 10px 30px rgba(100, 60, 30, 0.06);
-        }
-
-        .approach-panel h3 {
-            font-size: 23px;
-            margin-bottom: 15px;
-        }
-
-        .approach-panel p {
-            color: var(--gray);
-            margin-bottom: 15px;
-        }
-
-        /* Measuring impact */
-        .measurement {
+        .partners {
             background: var(--white);
         }
 
-        .measurement-grid {
+        .partner-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
-        .measurement-card {
-            padding: 28px;
-            border-radius: 10px;
-            background: var(--light-gray);
-            border-bottom: 4px solid var(--orange);
+        .partner-card {
+            min-height: 190px;
+            border: 2px dashed #f1c6a9;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+            background: #fffdfb;
+            transition: border-color 0.3s, transform 0.3s;
         }
 
-        .measurement-card h3 {
-            font-size: 19px;
-            margin-bottom: 10px;
+        .partner-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-4px);
         }
 
-        .measurement-card p {
+        .partner-placeholder {
+            width: 65px;
+            height: 65px;
+            background: var(--light-orange);
+            color: var(--orange-dark);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .partner-card h3 {
+            font-size: 17px;
+            margin-bottom: 7px;
+        }
+
+        .partner-card p {
             color: var(--gray);
-            font-size: 15px;
+            font-size: 13px;
         }
 
-        /* Call to action */
+        /* Collaboration */
+
+        .collaboration {
+            background: var(--light-orange);
+        }
+
+        .collaboration-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .collaboration-content h2 {
+            font-size: clamp(28px, 4vw, 39px);
+            margin-bottom: 18px;
+        }
+
+        .collaboration-content p {
+            color: var(--gray);
+            margin-bottom: 18px;
+        }
+
+        /* CTA */
+
         .cta {
             background: var(--orange);
             color: var(--white);
             text-align: center;
-            padding: 70px 20px;
+            padding: 75px 20px;
         }
 
         .cta h2 {
@@ -335,10 +357,11 @@
 
         .btn:hover {
             transform: translateY(-2px);
-            background: #fff3e9;
+            background: var(--light-orange);
         }
 
         /* Footer */
+
         footer {
             background: #242424;
             color: var(--white);
@@ -386,7 +409,8 @@
             font-size: 13px;
         }
 
-        /* Mobile navigation */
+        /* Mobile */
+
         @media (max-width: 900px) {
             .navbar {
                 flex-direction: column;
@@ -399,14 +423,14 @@
                 gap: 13px 18px;
             }
 
-            .priority-grid,
-            .measurement-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .approach-content {
+            .intro-content {
                 grid-template-columns: 1fr;
                 gap: 30px;
+            }
+
+            .values-grid,
+            .partner-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -419,8 +443,8 @@
                 padding: 55px 0;
             }
 
-            .priority-grid,
-            .measurement-grid,
+            .values-grid,
+            .partner-grid,
             .footer-content {
                 grid-template-columns: 1fr;
             }
@@ -437,7 +461,7 @@
                 padding: 8px 12px;
             }
 
-            .approach-panel {
+            .intro-panel {
                 padding: 25px;
             }
         }
@@ -446,249 +470,286 @@
 
 <body>
 
-    <header>
-        <div class="container navbar">
-            <a href="index.html" class="logo">
-                ONE IMPACT
-                <span>Social Development Network</span>
-            </a>
+<header>
+    <div class="container navbar">
 
-            <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="logo">
+            ONE IMPACT
+            <span>Social Development Network</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="programmes.html">Programmes</a>
+            <a href="impact.html">Our Impact</a>
+            <a href="partners.html" class="active">Partners</a>
+            <a href="contact.html" class="contact-link">Contact Us</a>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <span class="eyebrow">OUR PARTNERS</span>
+
+            <h1>Stronger Together, Creating Greater Impact</h1>
+
+            <p>
+                Meaningful social change is built through collaboration.
+                At One Impact Social Development Network, we believe
+                partnerships are essential to creating opportunities,
+                strengthening communities and building a more inclusive future.
+            </p>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section>
+        <div class="container intro-content">
+
+            <div class="intro-text">
+                <span class="section-heading label">Working Together</span>
+
+                <h2>Partnerships That Drive Positive Change</h2>
+
+                <p>
+                    We recognise that achieving lasting social development
+                    requires the collective efforts of individuals,
+                    organisations, institutions and communities.
+                </p>
+
+                <p>
+                    Through collaboration, we aim to bring together
+                    knowledge, resources and shared commitments to address
+                    social challenges and create meaningful opportunities.
+                </p>
+
+                <p>
+                    We value relationships built on trust, mutual respect,
+                    accountability and a shared vision for a better society.
+                </p>
+            </div>
+
+            <div class="intro-panel">
+                <h3>Our Partnership Philosophy</h3>
+
+                <p>
+                    We believe that every meaningful partnership has the
+                    potential to create opportunities and strengthen
+                    communities. By working together, we can extend the
+                    reach of our initiatives and support sustainable
+                    development.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Partnership Values -->
+    <section class="values">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="label">Our Approach</span>
+
+                <h2>What We Value in Partnerships</h2>
+
+                <p>
+                    We seek relationships that encourage cooperation,
+                    shared responsibility and meaningful social impact.
+                </p>
+            </div>
+
+            <div class="values-grid">
+
+                <article class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Collaboration</h3>
+                    <p>
+                        Working together with stakeholders to develop
+                        solutions and achieve shared objectives.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Shared Vision</h3>
+                    <p>
+                        Building relationships with people and organisations
+                        committed to positive social change.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3>Sustainability</h3>
+                    <p>
+                        Encouraging partnerships that support lasting
+                        improvements and long-term community development.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>
+                        Sharing ideas, knowledge and expertise to develop
+                        better approaches to social challenges.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <div class="value-icon">⚖️</div>
+                    <h3>Accountability</h3>
+                    <p>
+                        Promoting transparency, responsibility and
+                        mutual respect in our working relationships.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <div class="value-icon">❤️</div>
+                    <h3>Community Impact</h3>
+                    <p>
+                        Keeping people and communities at the centre
+                        of our collective efforts.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Showcase -->
+    <section class="partners">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="label">Our Network</span>
+
+                <h2>Our Partners and Collaborators</h2>
+
+                <p>
+                    We appreciate the organisations, institutions,
+                    individuals and stakeholders who contribute to
+                    meaningful development through collaboration.
+                </p>
+            </div>
+
+            <div class="partner-grid">
+
+                <div class="partner-card">
+                    <div class="partner-placeholder">🏢</div>
+                    <h3>Partner Organisation</h3>
+                    <p>Partner details and logo to be added.</p>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-placeholder">🌍</div>
+                    <h3>Partner Organisation</h3>
+                    <p>Partner details and logo to be added.</p>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-placeholder">🤝</div>
+                    <h3>Partner Organisation</h3>
+                    <p>Partner details and logo to be added.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Collaboration -->
+    <section class="collaboration">
+        <div class="container collaboration-content">
+
+            <span class="section-heading label">Building Connections</span>
+
+            <h2>Let's Create Impact Together</h2>
+
+            <p>
+                We welcome opportunities to connect with organisations,
+                institutions, businesses and individuals who share our
+                commitment to empowerment, inclusion and sustainable
+                social development.
+            </p>
+
+            <p>
+                Together, we can build meaningful relationships and
+                contribute to positive change in our communities.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+
+            <h2>Interested in Partnering With Us?</h2>
+
+            <p>
+                Get in touch with One Impact Social Development Network
+                to explore opportunities for collaboration and partnership.
+            </p>
+
+            <a href="contact.html" class="btn">Contact Our Team</a>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div class="footer-about">
+                <h3>One Impact Social Development Network</h3>
+
+                <p>
+                    Working towards inclusive communities, meaningful
+                    opportunities and sustainable social development.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="programmes.html">Programmes</a>
-                <a href="impact.html" class="active">Our Impact</a>
-                <a href="partners.html">Partners</a>
-                <a href="contact.html" class="contact-link">Contact Us</a>
-            </nav>
+                <a href="impact.html">Our Impact</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Connect With Us</h4>
+                <a href="partners.html">Our Partners</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
         </div>
-    </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <span class="eyebrow">OUR IMPACT</span>
-                <h1>Creating Change That Matters</h1>
-                <p>
-                    We believe meaningful development begins with people.
-                    Through community-focused initiatives and collaboration,
-                    One Impact Social Development Network works towards a
-                    more inclusive, empowered and sustainable future.
-                </p>
-            </div>
-        </section>
-
-        <section class="priorities">
-            <div class="container">
-                <div class="section-heading">
-                    <span class="label">Where We Focus</span>
-                    <h2>Building a Better Future Together</h2>
-                    <p>
-                        Our work is guided by the needs of communities and
-                        the belief that everyone deserves opportunities to
-                        learn, participate and thrive.
-                    </p>
-                </div>
-
-                <div class="priority-grid">
-                    <article class="priority-card">
-                        <div class="priority-icon" aria-hidden="true">📚</div>
-                        <h3>Education and Learning</h3>
-                        <p>
-                            Supporting access to learning opportunities,
-                            knowledge and skills that can help individuals
-                            build a stronger future.
-                        </p>
-                    </article>
-
-                    <article class="priority-card">
-                        <div class="priority-icon" aria-hidden="true">🤝</div>
-                        <h3>Community Development</h3>
-                        <p>
-                            Encouraging community participation, collaboration
-                            and locally driven solutions to social challenges.
-                        </p>
-                    </article>
-
-                    <article class="priority-card">
-                        <div class="priority-icon" aria-hidden="true">🌱</div>
-                        <h3>Empowerment and Inclusion</h3>
-                        <p>
-                            Promoting opportunities for people to develop
-                            their abilities, contribute to society and
-                            participate in community life.
-                        </p>
-                    </article>
-
-                    <article class="priority-card">
-                        <div class="priority-icon" aria-hidden="true">💡</div>
-                        <h3>Skills and Opportunities</h3>
-                        <p>
-                            Encouraging personal development, practical
-                            learning and access to opportunities that support
-                            long-term progress.
-                        </p>
-                    </article>
-
-                    <article class="priority-card">
-                        <div class="priority-icon" aria-hidden="true">🌍</div>
-                        <h3>Sustainable Development</h3>
-                        <p>
-                            Supporting approaches that consider community
-                            needs today while working towards lasting
-                            benefits for future generations.
-                        </p>
-                    </article>
-
-                    <article class="priority-card">
-                        <div class="priority-icon" aria-hidden="true">🫶</div>
-                        <h3>Partnership and Collaboration</h3>
-                        <p>
-                            Working with communities, organizations and
-                            stakeholders to encourage shared responsibility
-                            and collective progress.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="approach">
-            <div class="container approach-content">
-                <div class="approach-copy">
-                    <span class="label">Our Approach</span>
-                    <h2>Impact Begins With Listening</h2>
-
-                    <p>
-                        Lasting change requires understanding the people
-                        and communities a programme is intended to serve.
-                        We aim to support approaches that are responsive
-                        to local needs and shaped by meaningful participation.
-                    </p>
-
-                    <p>
-                        Our approach emphasizes collaboration, accountability
-                        and continuous learning so that activities can be
-                        reviewed and improved over time.
-                    </p>
-
-                    <ul class="approach-list">
-                        <li>Listen to community needs and priorities</li>
-                        <li>Encourage inclusive participation</li>
-                        <li>Collaborate with relevant stakeholders</li>
-                        <li>Review progress and learn from experience</li>
-                    </ul>
-                </div>
-
-                <div class="approach-panel">
-                    <h3>From Action to Lasting Change</h3>
-                    <p>
-                        We recognize that meaningful social development is
-                        a continuous process. It involves understanding
-                        challenges, taking practical action, learning from
-                        experience and building stronger partnerships.
-                    </p>
-                    <p>
-                        By keeping people and communities at the centre of
-                        our work, we aim to contribute to positive and
-                        sustainable social outcomes.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="measurement">
-            <div class="container">
-                <div class="section-heading">
-                    <span class="label">Accountability</span>
-                    <h2>How We Look at Progress</h2>
-                    <p>
-                        We believe impact should be understood through
-                        evidence, community feedback and the progress made
-                        towards clearly defined goals.
-                    </p>
-                </div>
-
-                <div class="measurement-grid">
-                    <article class="measurement-card">
-                        <h3>Reach and Participation</h3>
-                        <p>
-                            Understanding who participates in our activities
-                            and whether programmes are reaching their
-                            intended communities.
-                        </p>
-                    </article>
-
-                    <article class="measurement-card">
-                        <h3>Learning and Outcomes</h3>
-                        <p>
-                            Reviewing what participants learn, what changes
-                            occur and where further support may be needed.
-                        </p>
-                    </article>
-
-                    <article class="measurement-card">
-                        <h3>Community Feedback</h3>
-                        <p>
-                            Listening to participants and stakeholders to
-                            identify lessons, improve activities and
-                            strengthen accountability.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta">
-            <div class="container">
-                <h2>Be Part of the Change</h2>
-                <p>
-                    Positive social development is a shared responsibility.
-                    Connect with One Impact Social Development Network
-                    to explore ways to contribute, collaborate or support
-                    community-focused initiatives.
-                </p>
-                <a href="contact.html" class="btn">Get in Touch</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h3>One Impact Social Development Network</h3>
-                    <p>
-                        Working towards inclusive communities, meaningful
-                        opportunities and sustainable social development.
-                    </p>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="programmes.html">Programmes</a>
-                    <a href="impact.html">Our Impact</a>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Connect With Us</h4>
-                    <a href="partners.html">Our Partners</a>
-                    <a href="contact.html">Contact Us</a>
-                </div>
-            </div>
-
-            <div class="copyright">
-                &copy; <span id="year"></span> One Impact Social Development
-                Network. All rights reserved.
-            </div>
+        <div class="copyright">
+            &copy; <span id="year"></span>
+            One Impact Social Development Network. All rights reserved.
         </div>
-    </footer>
 
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
 
 </body>
 </html>
+```
