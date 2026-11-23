@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Our Impact | One Impact Social Development Network</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <meta name="description" content="Discover how One Impact Social Development Network works towards empowerment, inclusion and sustainable community development.">
 
+    <style>
         :root {
             --orange: #f47721;
             --orange-dark: #d95d0b;
@@ -19,7 +16,14 @@
             --white: #ffffff;
             --dark: #292929;
             --gray: #666666;
-            --light-gray: #f8f8f8;
+            --light-gray: #f7f7f7;
+            --border: #eeeeee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -39,53 +43,55 @@
 
         .container {
             width: 90%;
-            max-width: 1150px;
+            max-width: 1180px;
             margin: auto;
         }
 
-        /* Navigation */
+        /* NAVIGATION */
+
         header {
             background: var(--white);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 3px 18px rgba(0,0,0,0.06);
         }
 
         .navbar {
-            min-height: 82px;
+            min-height: 85px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            gap: 25px;
         }
 
         .logo {
             color: var(--orange);
-            font-size: 21px;
+            font-size: 23px;
             font-weight: 800;
-            line-height: 1.25;
+            line-height: 1.2;
         }
 
         .logo span {
             display: block;
             color: var(--dark);
-            font-size: 11px;
+            font-size: 10px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
+            margin-top: 5px;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 22px;
+            gap: 25px;
         }
 
         .nav-links a {
             color: var(--dark);
             font-size: 14px;
             font-weight: 600;
-            transition: color 0.3s;
+            transition: 0.3s;
         }
 
         .nav-links a:hover,
@@ -96,7 +102,7 @@
         .nav-links .contact-link {
             background: var(--orange);
             color: var(--white);
-            padding: 11px 18px;
+            padding: 12px 20px;
             border-radius: 5px;
         }
 
@@ -105,179 +111,222 @@
             color: var(--white);
         }
 
-        /* Hero */
+        /* HERO */
+
         .hero {
-            background: linear-gradient(120deg, #f47721, #ff9a50);
+            background:
+                radial-gradient(circle at 85% 20%, rgba(255,255,255,0.18), transparent 25%),
+                linear-gradient(120deg, #e96313, #f47721 55%, #ff9b55);
             color: var(--white);
-            padding: 90px 0;
-            text-align: center;
+            padding: 105px 0 110px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero .eyebrow {
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.18);
-            padding: 7px 16px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            border: 1px solid rgba(255,255,255,0.45);
             border-radius: 30px;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 18px;
         }
 
         .hero h1 {
-            font-size: clamp(34px, 5vw, 54px);
-            line-height: 1.2;
-            margin-bottom: 20px;
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.12;
+            max-width: 800px;
+            margin-bottom: 23px;
         }
 
         .hero p {
-            max-width: 760px;
-            margin: auto;
+            max-width: 690px;
             font-size: 17px;
-            color: #fffaf6;
+            color: #fff7f1;
+            margin-bottom: 30px;
         }
 
-        /* General sections */
+        .hero-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--orange-dark);
+            padding: 14px 25px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: var(--light-orange);
+            transform: translateY(-3px);
+        }
+
+        /* SECTION HEADINGS */
+
         section {
-            padding: 75px 0;
+            padding: 85px 0;
         }
 
         .section-heading {
+            max-width: 720px;
+            margin: 0 auto 50px;
             text-align: center;
-            max-width: 750px;
-            margin: 0 auto 45px;
         }
 
-        .section-heading .label {
+        .section-label {
             color: var(--orange-dark);
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 2px;
+            font-size: 12px;
             font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .section-heading h2 {
-            font-size: clamp(27px, 4vw, 38px);
-            line-height: 1.25;
-            margin: 12px 0;
+            font-size: clamp(29px, 4vw, 42px);
+            line-height: 1.2;
+            margin: 13px 0 17px;
         }
 
         .section-heading p {
             color: var(--gray);
+            font-size: 16px;
         }
 
-        /* Impact priorities */
+        /* IMPACT PRIORITIES */
+
         .priorities {
             background: var(--white);
         }
 
-        .priority-grid {
+        .impact-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
-        .priority-card {
-            padding: 32px 27px;
-            border: 1px solid #f0e6df;
-            border-radius: 12px;
+        .impact-card {
+            padding: 34px 29px;
             background: var(--white);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: 0.3s;
         }
 
-        .priority-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(100, 60, 30, 0.09);
+        .impact-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            border-color: #ffd2b5;
         }
 
-        .priority-icon {
-            width: 58px;
-            height: 58px;
+        .impact-icon {
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 12px;
             background: var(--light-orange);
+            border-radius: 12px;
             font-size: 28px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
-        .priority-card h3 {
+        .impact-card h3 {
             font-size: 20px;
             margin-bottom: 12px;
         }
 
-        .priority-card p {
+        .impact-card p {
             color: var(--gray);
-            font-size: 15px;
+            font-size: 14px;
         }
 
-        /* Our approach */
+        /* APPROACH */
+
         .approach {
-            background: var(--light-orange);
+            background: var(--light-gray);
         }
 
-        .approach-content {
+        .approach-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 55px;
+            gap: 65px;
             align-items: center;
         }
 
-        .approach-copy .label {
-            color: var(--orange-dark);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 13px;
-            font-weight: 800;
+        .approach-copy .section-label {
+            display: block;
+            margin-bottom: 12px;
         }
 
         .approach-copy h2 {
-            font-size: clamp(28px, 4vw, 39px);
-            line-height: 1.25;
-            margin: 13px 0 20px;
+            font-size: clamp(30px, 4vw, 42px);
+            line-height: 1.2;
+            margin-bottom: 22px;
         }
 
         .approach-copy p {
-            color: #555;
-            margin-bottom: 15px;
+            color: var(--gray);
+            margin-bottom: 17px;
         }
 
         .approach-list {
             list-style: none;
-            margin-top: 22px;
+            margin-top: 25px;
         }
 
         .approach-list li {
-            margin-bottom: 13px;
+            margin-bottom: 15px;
             font-weight: 600;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
         }
 
-        .approach-list li::before {
-            content: "✓";
-            color: var(--orange-dark);
+        .check {
+            color: var(--orange);
             font-weight: 900;
-            margin-right: 10px;
+            font-size: 18px;
         }
 
         .approach-panel {
             background: var(--white);
-            padding: 35px;
+            padding: 42px;
             border-radius: 14px;
-            border-left: 6px solid var(--orange);
-            box-shadow: 0 10px 30px rgba(100, 60, 30, 0.06);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--orange);
+        }
+
+        .approach-panel .panel-label {
+            color: var(--orange-dark);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
         .approach-panel h3 {
-            font-size: 23px;
-            margin-bottom: 15px;
+            font-size: 26px;
+            line-height: 1.3;
+            margin: 14px 0 18px;
         }
 
         .approach-panel p {
             color: var(--gray);
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+            font-size: 15px;
         }
 
-        /* Measuring impact */
+        /* MEASURING PROGRESS */
+
         .measurement {
             background: var(--white);
         }
@@ -289,7 +338,7 @@
         }
 
         .measurement-card {
-            padding: 28px;
+            padding: 32px;
             border-radius: 10px;
             background: var(--light-gray);
             border-bottom: 4px solid var(--orange);
@@ -297,82 +346,110 @@
 
         .measurement-card h3 {
             font-size: 19px;
-            margin-bottom: 10px;
+            margin-bottom: 13px;
         }
 
         .measurement-card p {
             color: var(--gray);
-            font-size: 15px;
+            font-size: 14px;
         }
 
-        /* Call to action */
+        /* CLOSING MESSAGE */
+
+        .closing {
+            background: var(--light-orange);
+            padding: 75px 0;
+        }
+
+        .closing-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .closing-content h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 17px;
+        }
+
+        .closing-content p {
+            color: var(--gray);
+            font-size: 16px;
+        }
+
+        /* CTA */
+
         .cta {
-            background: var(--orange);
+            background: linear-gradient(120deg, #e96313, #f47721);
             color: var(--white);
             text-align: center;
-            padding: 70px 20px;
+            padding: 80px 20px;
         }
 
         .cta h2 {
-            font-size: clamp(27px, 4vw, 38px);
+            font-size: clamp(29px, 4vw, 42px);
             margin-bottom: 15px;
         }
 
         .cta p {
-            max-width: 700px;
+            max-width: 680px;
             margin: 0 auto 28px;
-            color: #fffaf6;
+            color: #fff7f1;
         }
 
-        .btn {
+        .cta-button {
             display: inline-block;
             background: var(--white);
             color: var(--orange-dark);
-            padding: 13px 25px;
+            padding: 14px 28px;
             border-radius: 5px;
             font-weight: 800;
-            transition: transform 0.3s, background 0.3s;
+            transition: 0.3s;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            background: #fff3e9;
+        .cta-button:hover {
+            background: var(--light-orange);
+            transform: translateY(-3px);
         }
 
-        /* Footer */
+        /* FOOTER */
+
         footer {
             background: #242424;
             color: var(--white);
-            padding: 45px 0 20px;
+            padding: 55px 0 20px;
         }
 
-        .footer-content {
+        .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
-            gap: 35px;
-            margin-bottom: 35px;
+            gap: 45px;
+            margin-bottom: 40px;
         }
 
         .footer-about h3 {
             color: var(--orange);
             font-size: 21px;
-            margin-bottom: 14px;
+            margin-bottom: 15px;
         }
 
-        footer p {
-            color: #d0d0d0;
+        .footer-about p {
+            color: #cccccc;
+            max-width: 390px;
             font-size: 14px;
         }
 
         .footer-links h4 {
-            margin-bottom: 14px;
+            margin-bottom: 17px;
+            font-size: 16px;
         }
 
         .footer-links a {
             display: block;
-            color: #d0d0d0;
+            color: #cccccc;
             font-size: 14px;
-            margin-bottom: 9px;
+            margin-bottom: 11px;
+            transition: 0.3s;
         }
 
         .footer-links a:hover {
@@ -381,65 +458,75 @@
 
         .copyright {
             border-top: 1px solid #444;
-            padding-top: 18px;
+            padding-top: 20px;
             text-align: center;
-            color: #c5c5c5;
+            color: #aaaaaa;
             font-size: 13px;
         }
 
-        /* Mobile navigation */
-        @media (max-width: 900px) {
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 950px) {
             .navbar {
                 flex-direction: column;
-                padding: 18px 0;
+                justify-content: center;
+                padding: 20px 0;
             }
 
             .nav-links {
                 justify-content: center;
                 flex-wrap: wrap;
-                gap: 13px 18px;
+                gap: 15px 20px;
             }
 
-            .priority-grid,
+            .impact-grid,
             .measurement-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .approach-content {
+            .approach-layout {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 35px;
             }
         }
 
         @media (max-width: 600px) {
             .hero {
-                padding: 65px 0;
+                padding: 75px 0;
+            }
+
+            .hero p {
+                font-size: 15px;
             }
 
             section {
-                padding: 55px 0;
+                padding: 60px 0;
             }
 
-            .priority-grid,
+            .impact-grid,
             .measurement-grid,
-            .footer-content {
+            .footer-grid {
                 grid-template-columns: 1fr;
             }
 
             .nav-links {
-                gap: 10px 14px;
+                gap: 12px 15px;
             }
 
             .nav-links a {
-                font-size: 13px;
+                font-size: 12px;
             }
 
             .nav-links .contact-link {
-                padding: 8px 12px;
+                padding: 9px 13px;
             }
 
             .approach-panel {
-                padding: 25px;
+                padding: 28px;
+            }
+
+            .impact-card {
+                padding: 27px;
             }
         }
     </style>
@@ -447,8 +534,10 @@
 
 <body>
 
+    <!-- NAVIGATION -->
     <header>
         <div class="container navbar">
+
             <a href="index.html" class="logo">
                 ONE IMPACT
                 <span>Social Development Network</span>
@@ -462,39 +551,63 @@
                 <a href="partners.html">Partners</a>
                 <a href="contact.html" class="contact-link">Contact Us</a>
             </nav>
+
         </div>
     </header>
 
+
     <main>
+
+        <!-- HERO SECTION -->
         <section class="hero">
             <div class="container">
-                <span class="eyebrow">OUR IMPACT</span>
-                <h1>Creating Change That Matters</h1>
-                <p>
-                    We believe meaningful development begins with people.
-                    Through community-focused initiatives and collaboration,
-                    One Impact Social Development Network works towards a
-                    more inclusive, empowered and sustainable future.
-                </p>
+                <div class="hero-content">
+
+                    <span class="eyebrow">Our Impact</span>
+
+                    <h1>Creating Change That Matters.</h1>
+
+                    <p>
+                        Meaningful development begins with people.
+                        At One Impact Social Development Network,
+                        we believe in creating opportunities, encouraging
+                        inclusion and supporting initiatives that contribute
+                        to stronger and more sustainable communities.
+                    </p>
+
+                    <a href="#our-focus" class="hero-button">
+                        Explore Our Impact
+                    </a>
+
+                </div>
             </div>
         </section>
 
-        <section class="priorities">
+
+        <!-- AREAS OF IMPACT -->
+        <section class="priorities" id="our-focus">
             <div class="container">
+
                 <div class="section-heading">
-                    <span class="label">Where We Focus</span>
-                    <h2>Building a Better Future Together</h2>
+                    <span class="section-label">Our Areas of Focus</span>
+
+                    <h2>Where We Aim to Make a Difference</h2>
+
                     <p>
-                        Our work is guided by the needs of communities and
-                        the belief that everyone deserves opportunities to
-                        learn, participate and thrive.
+                        Our work is guided by the belief that everyone
+                        deserves the opportunity to learn, participate,
+                        develop their potential and contribute to society.
                     </p>
                 </div>
 
-                <div class="priority-grid">
-                    <article class="priority-card">
-                        <div class="priority-icon" aria-hidden="true">📚</div>
+
+                <div class="impact-grid">
+
+                    <article class="impact-card">
+                        <div class="impact-icon">📚</div>
+
                         <h3>Education and Learning</h3>
+
                         <p>
                             Supporting access to learning opportunities,
                             knowledge and skills that can help individuals
@@ -502,18 +615,25 @@
                         </p>
                     </article>
 
-                    <article class="priority-card">
-                        <div class="priority-icon" aria-hidden="true">🤝</div>
+
+                    <article class="impact-card">
+                        <div class="impact-icon">🤝</div>
+
                         <h3>Community Development</h3>
+
                         <p>
-                            Encouraging community participation, collaboration
-                            and locally driven solutions to social challenges.
+                            Encouraging community participation,
+                            collaboration and locally driven solutions
+                            to social challenges.
                         </p>
                     </article>
 
-                    <article class="priority-card">
-                        <div class="priority-icon" aria-hidden="true">🌱</div>
+
+                    <article class="impact-card">
+                        <div class="impact-icon">🌱</div>
+
                         <h3>Empowerment and Inclusion</h3>
+
                         <p>
                             Promoting opportunities for people to develop
                             their abilities, contribute to society and
@@ -521,19 +641,25 @@
                         </p>
                     </article>
 
-                    <article class="priority-card">
-                        <div class="priority-icon" aria-hidden="true">💡</div>
+
+                    <article class="impact-card">
+                        <div class="impact-icon">💡</div>
+
                         <h3>Skills and Opportunities</h3>
+
                         <p>
                             Encouraging personal development, practical
-                            learning and access to opportunities that support
-                            long-term progress.
+                            learning and access to opportunities that
+                            support long-term progress.
                         </p>
                     </article>
 
-                    <article class="priority-card">
-                        <div class="priority-icon" aria-hidden="true">🌍</div>
+
+                    <article class="impact-card">
+                        <div class="impact-icon">🌍</div>
+
                         <h3>Sustainable Development</h3>
+
                         <p>
                             Supporting approaches that consider community
                             needs today while working towards lasting
@@ -541,154 +667,272 @@
                         </p>
                     </article>
 
-                    <article class="priority-card">
-                        <div class="priority-icon" aria-hidden="true">🫶</div>
+
+                    <article class="impact-card">
+                        <div class="impact-icon">🫶</div>
+
                         <h3>Partnership and Collaboration</h3>
+
                         <p>
-                            Working with communities, organizations and
+                            Working with communities, organisations and
                             stakeholders to encourage shared responsibility
                             and collective progress.
                         </p>
                     </article>
+
                 </div>
             </div>
         </section>
 
+
+        <!-- OUR APPROACH -->
         <section class="approach">
-            <div class="container approach-content">
-                <div class="approach-copy">
-                    <span class="label">Our Approach</span>
-                    <h2>Impact Begins With Listening</h2>
+            <div class="container">
 
-                    <p>
-                        Lasting change requires understanding the people
-                        and communities a programme is intended to serve.
-                        We aim to support approaches that are responsive
-                        to local needs and shaped by meaningful participation.
-                    </p>
+                <div class="approach-layout">
 
-                    <p>
-                        Our approach emphasizes collaboration, accountability
-                        and continuous learning so that activities can be
-                        reviewed and improved over time.
-                    </p>
+                    <div class="approach-copy">
 
-                    <ul class="approach-list">
-                        <li>Listen to community needs and priorities</li>
-                        <li>Encourage inclusive participation</li>
-                        <li>Collaborate with relevant stakeholders</li>
-                        <li>Review progress and learn from experience</li>
-                    </ul>
-                </div>
+                        <span class="section-label">Our Approach</span>
 
-                <div class="approach-panel">
-                    <h3>From Action to Lasting Change</h3>
-                    <p>
-                        We recognize that meaningful social development is
-                        a continuous process. It involves understanding
-                        challenges, taking practical action, learning from
-                        experience and building stronger partnerships.
-                    </p>
-                    <p>
-                        By keeping people and communities at the centre of
-                        our work, we aim to contribute to positive and
-                        sustainable social outcomes.
-                    </p>
+                        <h2>Lasting Change Begins With Understanding.</h2>
+
+                        <p>
+                            Every community has its own needs, experiences
+                            and aspirations. We believe meaningful social
+                            development begins by listening to people and
+                            understanding the challenges they face.
+                        </p>
+
+                        <p>
+                            Our approach emphasises collaboration,
+                            accountability and continuous learning.
+                            These principles help guide activities and
+                            encourage solutions that respond to community
+                            priorities.
+                        </p>
+
+                        <ul class="approach-list">
+                            <li>
+                                <span class="check">✓</span>
+                                Listen to community needs and priorities.
+                            </li>
+
+                            <li>
+                                <span class="check">✓</span>
+                                Encourage inclusive participation.
+                            </li>
+
+                            <li>
+                                <span class="check">✓</span>
+                                Collaborate with relevant stakeholders.
+                            </li>
+
+                            <li>
+                                <span class="check">✓</span>
+                                Review progress and learn from experience.
+                            </li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="approach-panel">
+
+                        <span class="panel-label">Our Commitment</span>
+
+                        <h3>People at the Centre of Development.</h3>
+
+                        <p>
+                            We recognise that positive social change
+                            requires more than good intentions. It requires
+                            listening, practical action, cooperation and
+                            a commitment to learning.
+                        </p>
+
+                        <p>
+                            By placing people and communities at the centre
+                            of our work, we aim to contribute to opportunities
+                            that support inclusion, empowerment and
+                            sustainable development.
+                        </p>
+
+                    </div>
+
                 </div>
             </div>
         </section>
 
+
+        <!-- ACCOUNTABILITY -->
         <section class="measurement">
             <div class="container">
+
                 <div class="section-heading">
-                    <span class="label">Accountability</span>
-                    <h2>How We Look at Progress</h2>
+
+                    <span class="section-label">Accountability and Progress</span>
+
+                    <h2>Understanding the Difference We Make</h2>
+
                     <p>
-                        We believe impact should be understood through
-                        evidence, community feedback and the progress made
+                        We believe meaningful impact should be understood
+                        through evidence, community feedback and progress
                         towards clearly defined goals.
                     </p>
+
                 </div>
 
+
                 <div class="measurement-grid">
+
                     <article class="measurement-card">
+
                         <h3>Reach and Participation</h3>
+
                         <p>
-                            Understanding who participates in our activities
+                            Understanding who participates in activities
                             and whether programmes are reaching their
                             intended communities.
                         </p>
+
                     </article>
 
+
                     <article class="measurement-card">
+
                         <h3>Learning and Outcomes</h3>
+
                         <p>
                             Reviewing what participants learn, what changes
                             occur and where further support may be needed.
                         </p>
+
                     </article>
+
 
                     <article class="measurement-card">
+
                         <h3>Community Feedback</h3>
+
                         <p>
-                            Listening to participants and stakeholders to
-                            identify lessons, improve activities and
+                            Listening to participants and stakeholders
+                            to identify lessons, improve activities and
                             strengthen accountability.
                         </p>
+
                     </article>
+
                 </div>
             </div>
         </section>
 
-        <section class="cta">
-            <div class="container">
-                <h2>Be Part of the Change</h2>
+
+        <!-- CLOSING MESSAGE -->
+        <section class="closing">
+
+            <div class="container closing-content">
+
+                <span class="section-label">Moving Forward</span>
+
+                <h2>Building Progress Through Collective Action.</h2>
+
                 <p>
-                    Positive social development is a shared responsibility.
-                    Connect with One Impact Social Development Network
-                    to explore ways to contribute, collaborate or support
-                    community-focused initiatives.
+                    Sustainable development is a shared responsibility.
+                    Through meaningful participation, collaboration and
+                    continued commitment, we can work towards communities
+                    where people have greater opportunities to thrive.
                 </p>
-                <a href="contact.html" class="btn">Get in Touch</a>
+
             </div>
+
         </section>
+
+
+        <!-- CALL TO ACTION -->
+        <section class="cta">
+
+            <div class="container">
+
+                <h2>Be Part of the Change.</h2>
+
+                <p>
+                    Positive social development happens when people and
+                    organisations work together. Connect with One Impact
+                    Social Development Network to explore opportunities
+                    to contribute, collaborate or support our work.
+                </p>
+
+                <a href="contact.html" class="cta-button">
+                    Get in Touch
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
 
+
+    <!-- FOOTER -->
     <footer>
+
         <div class="container">
-            <div class="footer-content">
+
+            <div class="footer-grid">
+
                 <div class="footer-about">
+
                     <h3>One Impact Social Development Network</h3>
+
                     <p>
-                        Working towards inclusive communities, meaningful
-                        opportunities and sustainable social development.
+                        Working towards inclusive communities,
+                        meaningful opportunities and sustainable
+                        social development.
                     </p>
+
                 </div>
 
+
                 <div class="footer-links">
+
                     <h4>Quick Links</h4>
+
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
                     <a href="programmes.html">Programmes</a>
                     <a href="impact.html">Our Impact</a>
+
                 </div>
+
 
                 <div class="footer-links">
+
                     <h4>Connect With Us</h4>
+
                     <a href="partners.html">Our Partners</a>
                     <a href="contact.html">Contact Us</a>
+
                 </div>
+
             </div>
+
 
             <div class="copyright">
-                &copy; <span id="year"></span> One Impact Social Development
-                Network. All rights reserved.
+
+                &copy; <span id="year"></span>
+                One Impact Social Development Network.
+                All rights reserved.
+
             </div>
+
         </div>
+
     </footer>
 
+
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
     </script>
 
 </body>
