@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f36b21">
 
     <title>Contact Us | One Impact Social Development Network</title>
+
+    <meta name="description" content="Get in touch with One Impact Social Development Network. Contact us for enquiries, partnerships and opportunities to create positive social change.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -14,16 +21,23 @@
         }
 
         :root {
-            --orange: #f47721;
-            --dark-orange: #d95d0b;
-            --dark: #292929;
-            --gray: #666;
-            --light: #fff7f1;
-            --white: #fff;
+            --orange: #f36b21;
+            --orange-dark: #d9510d;
+            --orange-light: #fff0e5;
+            --cream: #fffaf5;
+            --white: #ffffff;
+            --dark: #242424;
+            --text: #66615d;
+            --border: #eee8e2;
+            --black: #191919;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'DM Sans', sans-serif;
             color: var(--dark);
             line-height: 1.7;
             background: var(--white);
@@ -35,30 +49,31 @@
 
         .container {
             width: 90%;
-            max-width: 1150px;
+            max-width: 1180px;
             margin: auto;
         }
 
         /* HEADER */
 
         header {
-            background: white;
-            padding: 18px 0;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            background: var(--white);
+            padding: 17px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
 
         .brand {
-            font-size: 22px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 23px;
             font-weight: 800;
             color: var(--orange);
             line-height: 1.2;
@@ -67,22 +82,22 @@
         .brand small {
             display: block;
             color: var(--dark);
-            font-size: 10px;
-            letter-spacing: 1.5px;
+            font-size: 9px;
+            letter-spacing: 1.6px;
             margin-top: 4px;
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 23px;
-            flex-wrap: wrap;
+            gap: 25px;
         }
 
         nav a {
-            font-size: 14px;
-            font-weight: 600;
             color: var(--dark);
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.3s;
         }
 
         nav a:hover,
@@ -92,79 +107,93 @@
 
         nav .nav-button {
             background: var(--orange);
-            color: white;
-            padding: 10px 18px;
+            color: var(--white);
+            padding: 11px 20px;
             border-radius: 5px;
         }
 
         nav .nav-button:hover {
-            background: var(--dark-orange);
-            color: white;
+            background: var(--orange-dark);
+            color: var(--white);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 27px;
+            color: var(--dark);
+            cursor: pointer;
         }
 
         /* HERO */
 
         .hero {
             background:
-                linear-gradient(rgba(40,30,20,0.65), rgba(40,30,20,0.65)),
-                linear-gradient(120deg, #f47721, #ffad70);
-            padding: 105px 20px;
+                linear-gradient(110deg, rgba(35,25,18,0.82), rgba(35,25,18,0.48)),
+                linear-gradient(120deg, #f36b21, #ffb078);
+            padding: 115px 20px;
             text-align: center;
-            color: white;
+            color: var(--white);
         }
 
         .hero-label {
             display: inline-block;
-            padding: 7px 17px;
-            border: 1px solid rgba(255,255,255,0.6);
+            border: 1px solid rgba(255,255,255,0.65);
             border-radius: 30px;
-            font-size: 12px;
+            padding: 7px 18px;
+            font-size: 11px;
+            font-weight: 700;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .hero h1 {
-            font-size: clamp(36px, 5vw, 55px);
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(36px, 5vw, 56px);
             line-height: 1.2;
             margin-bottom: 20px;
         }
 
         .hero p {
-            max-width: 680px;
+            max-width: 700px;
             margin: auto;
-            font-size: 17px;
-            color: #fff5ed;
+            color: #fff4ec;
+            font-size: 16px;
         }
 
         /* INTRODUCTION */
 
         .intro {
-            padding: 75px 0 35px;
+            padding: 85px 0 45px;
             text-align: center;
         }
 
-        .intro-label {
+        .section-label {
             color: var(--orange-dark);
-            font-size: 13px;
-            font-weight: bold;
+            font-size: 12px;
+            font-weight: 800;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .intro h2 {
-            font-size: clamp(28px, 4vw, 38px);
-            margin: 12px 0;
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(28px, 4vw, 39px);
+            margin: 13px 0;
         }
 
         .intro p {
-            max-width: 700px;
+            max-width: 720px;
             margin: auto;
-            color: var(--gray);
+            color: var(--text);
+            font-size: 15px;
         }
 
         /* CONTACT CARDS */
 
         .contact-section {
-            padding: 35px 0 85px;
+            padding: 30px 0 90px;
         }
 
         .contact-grid {
@@ -174,48 +203,49 @@
         }
 
         .contact-card {
-            padding: 35px 25px;
-            border: 1px solid #eee;
+            padding: 38px 28px;
+            border: 1px solid var(--border);
             border-radius: 12px;
             text-align: center;
-            background: white;
-            transition: 0.3s;
+            background: var(--white);
+            transition: 0.3s ease;
         }
 
         .contact-card:hover {
             transform: translateY(-7px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            border-color: #ffd2b3;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            border-color: #ffd0b0;
         }
 
         .icon {
-            width: 65px;
-            height: 65px;
-            background: var(--light);
+            width: 68px;
+            height: 68px;
+            background: var(--orange-light);
             color: var(--orange);
             border-radius: 50%;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 27px;
-            margin: 0 auto 20px;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 22px;
         }
 
         .contact-card h3 {
-            font-size: 19px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 20px;
             margin-bottom: 10px;
         }
 
         .contact-card p {
-            color: var(--gray);
+            color: var(--text);
             font-size: 14px;
-            margin-bottom: 15px;
+            margin-bottom: 17px;
         }
 
         .contact-card a {
-            color: var(--dark-orange);
+            color: var(--orange-dark);
             font-size: 14px;
-            font-weight: bold;
+            font-weight: 700;
             overflow-wrap: anywhere;
         }
 
@@ -226,227 +256,276 @@
         /* CONTACT DETAILS */
 
         .details-section {
-            background: var(--light);
-            padding: 80px 0;
+            background: var(--cream);
+            padding: 90px 0;
         }
 
         .details-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 65px;
             align-items: center;
         }
 
-        .details-text .label {
-            color: var(--orange-dark);
-            font-weight: bold;
-            letter-spacing: 2px;
-            font-size: 12px;
-        }
-
         .details-text h2 {
-            font-size: clamp(29px, 4vw, 40px);
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(29px, 4vw, 41px);
             line-height: 1.3;
             margin: 15px 0;
         }
 
         .details-text > p {
-            color: var(--gray);
-            margin-bottom: 25px;
+            color: var(--text);
+            font-size: 15px;
+            margin-bottom: 28px;
         }
 
         .detail-point {
             display: flex;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .check {
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
             background: var(--orange);
-            color: white;
+            color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-            font-weight: bold;
+            font-weight: 800;
         }
 
         .detail-point h4 {
-            margin-bottom: 3px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
+            margin-bottom: 4px;
         }
 
         .detail-point p {
-            color: var(--gray);
+            color: var(--text);
             font-size: 14px;
         }
 
         .details-box {
-            background: white;
-            padding: 40px;
+            background: var(--white);
+            padding: 42px;
             border-radius: 14px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
             border-top: 5px solid var(--orange);
         }
 
         .details-box h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 25px;
+            margin-bottom: 10px;
         }
 
         .details-box > p {
-            color: var(--gray);
+            color: var(--text);
+            font-size: 14px;
             margin-bottom: 25px;
         }
 
         .details-box a {
             display: block;
-            padding: 15px 18px;
-            background: var(--light);
+            padding: 16px 18px;
+            background: var(--cream);
             border-radius: 7px;
             margin-bottom: 13px;
             color: var(--dark);
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 14px;
             overflow-wrap: anywhere;
+            transition: 0.3s;
+        }
+
+        .details-box a:hover {
+            background: var(--orange-light);
         }
 
         .details-box a span {
             display: block;
             color: var(--orange-dark);
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 4px;
         }
 
-        .details-box a:hover {
-            background: #ffeadb;
-        }
-
-        .whatsapp-button {
-            display: inline-block !important;
-            text-align: center;
-            background: var(--orange) !important;
-            color: white !important;
-            padding: 14px 20px !important;
-            margin-top: 10px;
-            width: 100%;
-        }
-
-        .whatsapp-button:hover {
-            background: var(--dark-orange) !important;
-        }
-
-        /* FINAL CTA */
-
-        .cta {
-            padding: 75px 20px;
+        .details-box .whatsapp-button {
             text-align: center;
             background: var(--orange);
-            color: white;
+            color: var(--white);
+            padding: 15px 20px;
+            margin-top: 17px;
+        }
+
+        .details-box .whatsapp-button:hover {
+            background: var(--orange-dark);
+        }
+
+        /* CTA */
+
+        .cta {
+            padding: 85px 20px;
+            text-align: center;
+            background: var(--orange);
+            color: var(--white);
         }
 
         .cta h2 {
-            font-size: clamp(27px, 4vw, 38px);
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(27px, 4vw, 40px);
             margin-bottom: 15px;
         }
 
         .cta p {
-            max-width: 700px;
+            max-width: 720px;
             margin: auto;
-            color: #fff5ed;
+            color: #fff4ec;
+            font-size: 15px;
         }
 
         .cta a {
             display: inline-block;
-            margin-top: 25px;
-            background: white;
-            color: var(--dark-orange);
-            padding: 13px 25px;
+            margin-top: 28px;
+            background: var(--white);
+            color: var(--orange-dark);
+            padding: 14px 27px;
             border-radius: 5px;
-            font-weight: bold;
+            font-weight: 800;
+            transition: 0.3s;
         }
 
         .cta a:hover {
-            background: var(--light);
+            background: var(--orange-light);
+            transform: translateY(-3px);
         }
 
         /* FOOTER */
 
         footer {
-            background: #252525;
-            color: white;
-            padding: 50px 0 20px;
+            background: var(--black);
+            color: var(--white);
+            padding: 65px 0 22px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 40px;
-            margin-bottom: 35px;
+            margin-bottom: 45px;
         }
 
         .footer-brand {
             color: var(--orange);
-            font-size: 21px;
-            font-weight: bold;
+            font-family: 'Manrope', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
             margin-bottom: 15px;
         }
 
         footer p {
-            color: #ccc;
-            font-size: 14px;
+            color: #c7c7c7;
+            font-size: 13px;
+            line-height: 1.8;
         }
 
         .footer-column h4 {
-            margin-bottom: 15px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 15px;
+            margin-bottom: 18px;
         }
 
         .footer-column a {
             display: block;
-            color: #ccc;
-            font-size: 14px;
-            margin-bottom: 10px;
+            color: #c7c7c7;
+            font-size: 13px;
+            margin-bottom: 11px;
+            transition: 0.3s;
+            overflow-wrap: anywhere;
         }
 
         .footer-column a:hover {
             color: var(--orange);
+            padding-left: 3px;
         }
 
         .copyright {
-            border-top: 1px solid #444;
+            border-top: 1px solid #393939;
             text-align: center;
-            padding-top: 20px;
-            color: #bbb;
-            font-size: 13px;
+            padding-top: 22px;
+            color: #aaa;
+            font-size: 12px;
         }
 
-        /* MOBILE */
+        /* RESPONSIVE DESIGN */
 
-        @media (max-width: 850px) {
+        @media (max-width: 950px) {
             .navbar {
-                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .menu-toggle {
+                display: block;
             }
 
             nav {
-                justify-content: center;
-                gap: 15px;
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding-top: 15px;
+                border-top: 1px solid var(--border);
             }
 
+            nav.show {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                padding: 11px 5px;
+            }
+
+            nav .nav-button {
+                width: fit-content;
+                margin-top: 8px;
+                padding: 10px 18px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1.5fr 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 750px) {
             .contact-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
             .details-layout {
                 grid-template-columns: 1fr;
-                gap: 35px;
+                gap: 40px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 520px) {
             .hero {
-                padding: 75px 15px;
+                padding: 80px 15px;
+            }
+
+            .intro {
+                padding-top: 65px;
             }
 
             .contact-grid,
@@ -454,343 +533,9 @@
                 grid-template-columns: 1fr;
             }
 
-            .details-box {
-                padding: 25px;
+            .contact-card {
+                padding: 32px 22px;
             }
 
-            nav {
-                gap: 12px;
-            }
-
-            nav a {
-                font-size: 13px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- NAVIGATION -->
-
-    <header>
-        <div class="container navbar">
-
-            <a href="index.html" class="brand">
-                ONE IMPACT
-                <small>SOCIAL DEVELOPMENT NETWORK</small>
-            </a>
-
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="programmes.html">Programmes</a>
-                <a href="impact.html">Our Impact</a>
-                <a href="partners.html">Partners</a>
-                <a href="contact.html" class="nav-button active">Contact Us</a>
-            </nav>
-
-        </div>
-    </header>
-
-
-    <main>
-
-        <!-- HERO -->
-
-        <section class="hero">
-            <div class="container">
-
-                <span class="hero-label">CONNECT WITH ONE IMPACT</span>
-
-                <h1>Let's Connect and Create Impact</h1>
-
-                <p>
-                    Every meaningful change begins with a conversation.
-                    Whether you have an enquiry, an idea or an opportunity
-                    to collaborate, we would love to hear from you.
-                </p>
-
-            </div>
-        </section>
-
-
-        <!-- INTRODUCTION -->
-
-        <section class="intro">
-            <div class="container">
-
-                <span class="intro-label">WE ARE HERE TO CONNECT</span>
-
-                <h2>Get in Touch With Our Team</h2>
-
-                <p>
-                    At One Impact Social Development Network, we believe
-                    in the power of communication and collaboration.
-                    Reach out to us through any of the channels below.
-                </p>
-
-            </div>
-        </section>
-
-
-        <!-- CONTACT CARDS -->
-
-        <section class="contact-section">
-            <div class="container">
-
-                <div class="contact-grid">
-
-                    <div class="contact-card">
-
-                        <div class="icon">✉</div>
-
-                        <h3>Email Us</h3>
-
-                        <p>
-                            For enquiries, questions and official correspondence.
-                        </p>
-
-                        <a href="mailto:theoneimpactafr@gmail.com">
-                            theoneimpactafr@gmail.com
-                        </a>
-
-                    </div>
-
-
-                    <div class="contact-card">
-
-                        <div class="icon">☎</div>
-
-                        <h3>Call Us</h3>
-
-                        <p>
-                            Speak with us directly about our work and activities.
-                        </p>
-
-                        <a href="tel:+2349155969514">
-                            +234 915 596 9514
-                        </a>
-
-                    </div>
-
-
-                    <div class="contact-card">
-
-                        <div class="icon">↗</div>
-
-                        <h3>WhatsApp</h3>
-
-                        <p>
-                            Connect with us through WhatsApp for enquiries.
-                        </p>
-
-                        <a
-                            href="https://wa.me/2349155969514"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Start a Conversation
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ABOUT CONTACT -->
-
-        <section class="details-section">
-            <div class="container details-layout">
-
-                <div class="details-text">
-
-                    <span class="label">LET'S WORK TOGETHER</span>
-
-                    <h2>Building Connections That Make a Difference</h2>
-
-                    <p>
-                        We welcome conversations with individuals,
-                        organisations, institutions and potential
-                        partners who share an interest in positive
-                        social change.
-                    </p>
-
-                    <div class="detail-point">
-
-                        <div class="check">✓</div>
-
-                        <div>
-                            <h4>Partnership Opportunities</h4>
-                            <p>
-                                Explore opportunities to collaborate
-                                on meaningful initiatives.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class="detail-point">
-
-                        <div class="check">✓</div>
-
-                        <div>
-                            <h4>Programme Enquiries</h4>
-                            <p>
-                                Learn more about our programmes and
-                                community development activities.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class="detail-point">
-
-                        <div class="check">✓</div>
-
-                        <div>
-                            <h4>Support and Collaboration</h4>
-                            <p>
-                                Connect with us to explore ways of
-                                contributing to positive social change.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="details-box">
-
-                    <h3>Contact Information</h3>
-
-                    <p>
-                        You can reach One Impact Social Development
-                        Network through our official contact channels.
-                    </p>
-
-                    <a href="mailto:theoneimpactafr@gmail.com">
-                        <span>Official Email</span>
-                        theoneimpactafr@gmail.com
-                    </a>
-
-                    <a href="tel:+2349155969514">
-                        <span>Telephone</span>
-                        +234 915 596 9514
-                    </a>
-
-                    <a
-                        href="https://wa.me/2349155969514"
-                        class="whatsapp-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Contact Us on WhatsApp
-                    </a>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- CALL TO ACTION -->
-
-        <section class="cta">
-
-            <h2>Together, We Can Create Greater Impact</h2>
-
-            <p>
-                Meaningful change happens when people and organisations
-                come together with a shared purpose. We look forward
-                to hearing from you.
-            </p>
-
-            <a href="mailto:theoneimpactafr@gmail.com">
-                Send Us an Email
-            </a>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="container">
-
-            <div class="footer-grid">
-
-                <div>
-
-                    <div class="footer-brand">
-                        One Impact Social Development Network
-                    </div>
-
-                    <p>
-                        Committed to women's empowerment,
-                        community development and positive
-                        social change.
-                    </p>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h4>Quick Links</h4>
-
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="programmes.html">Programmes</a>
-                    <a href="impact.html">Our Impact</a>
-                    <a href="partners.html">Partners</a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h4>Contact</h4>
-
-                    <a href="mailto:theoneimpactafr@gmail.com">
-                        Email Us
-                    </a>
-
-                    <a href="tel:+2349155969514">
-                        +234 915 596 9514
-                    </a>
-
-                    <a href="contact.html">Contact Page</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="copyright">
-
-                &copy; <span id="year"></span>
-                One Impact Social Development Network.
-                All Rights Reserved.
-
-            </div>
-
-        </div>
-
-    </footer>
-
-
-    <script>
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
-    </script>
-
-</body>
-</html>
+            .details-section {
+                padding: 65
