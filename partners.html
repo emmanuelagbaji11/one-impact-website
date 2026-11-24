@@ -1,471 +1,637 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Our Partners | One Impact Social Development Network</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --orange: #f47721;
-            --orange-dark: #d95d0b;
-            --light-orange: #fff3e9;
-            --white: #ffffff;
-            --dark: #292929;
-            --gray: #666666;
-            --light-gray: #f8f8f8;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.7;
-            color: var(--dark);
-            background: var(--white);
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        /* Navigation */
-
-        header {
-            background: var(--white);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            min-height: 82px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .logo {
-            color: var(--orange);
-            font-size: 21px;
-            font-weight: 800;
-            line-height: 1.25;
-        }
-
-        .logo span {
-            display: block;
-            color: var(--dark);
-            font-size: 11px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 22px;
-        }
-
-        .nav-links a {
-            color: var(--dark);
-            font-size: 14px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--orange);
-        }
-
-        .nav-links .contact-link {
-            background: var(--orange);
-            color: var(--white);
-            padding: 11px 18px;
-            border-radius: 5px;
-        }
-
-        .nav-links .contact-link:hover {
-            background: var(--orange-dark);
-            color: var(--white);
-        }
-
-        /* Hero */
-
-        .hero {
-            background: linear-gradient(120deg, #f47721, #ff9a50);
-            color: var(--white);
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .eyebrow {
-            display: inline-block;
-            background: rgba(255,255,255,0.18);
-            padding: 7px 16px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 {
-            font-size: clamp(34px, 5vw, 54px);
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            max-width: 760px;
-            margin: auto;
-            font-size: 17px;
-            color: #fffaf6;
-        }
-
-        /* Sections */
-
-        section {
-            padding: 75px 0;
-        }
-
-        .section-heading {
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto 45px;
-        }
-
-        .section-heading .label {
-            color: var(--orange-dark);
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 2px;
-            font-weight: 800;
-        }
-
-        .section-heading h2 {
-            font-size: clamp(27px, 4vw, 38px);
-            line-height: 1.25;
-            margin: 12px 0;
-        }
-
-        .section-heading p {
-            color: var(--gray);
-        }
-
-        /* Introduction */
-
-        .intro-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .intro-text h2 {
-            font-size: 34px;
-            line-height: 1.3;
-            margin-bottom: 20px;
-        }
-
-        .intro-text p {
-            color: var(--gray);
-            margin-bottom: 15px;
-        }
-
-        .intro-panel {
-            background: var(--light-orange);
-            padding: 40px;
-            border-radius: 14px;
-            border-left: 6px solid var(--orange);
-        }
-
-        .intro-panel h3 {
-            font-size: 23px;
-            margin-bottom: 15px;
-        }
-
-        .intro-panel p {
-            color: var(--gray);
-        }
-
-        /* Partnership values */
-
-        .values {
-            background: var(--light-gray);
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .value-card {
-            background: var(--white);
-            padding: 32px 27px;
-            border-radius: 12px;
-            border: 1px solid #f0e6df;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .value-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(100,60,30,0.09);
-        }
-
-        .value-icon {
-            width: 58px;
-            height: 58px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            background: var(--light-orange);
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .value-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        .value-card p {
-            color: var(--gray);
-            font-size: 15px;
-        }
-
-        /* Partner spaces */
-
-        .partners {
-            background: var(--white);
-        }
-
-        .partner-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .partner-card {
-            min-height: 190px;
-            border: 2px dashed #f1c6a9;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-            text-align: center;
-            background: #fffdfb;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .partner-card:hover {
-            border-color: var(--orange);
-            transform: translateY(-4px);
-        }
-
-        .partner-placeholder {
-            width: 65px;
-            height: 65px;
-            background: var(--light-orange);
-            color: var(--orange-dark);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        .partner-card h3 {
-            font-size: 17px;
-            margin-bottom: 7px;
-        }
-
-        .partner-card p {
-            color: var(--gray);
-            font-size: 13px;
-        }
-
-        /* Collaboration */
-
-        .collaboration {
-            background: var(--light-orange);
-        }
-
-        .collaboration-content {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .collaboration-content h2 {
-            font-size: clamp(28px, 4vw, 39px);
-            margin-bottom: 18px;
-        }
-
-        .collaboration-content p {
-            color: var(--gray);
-            margin-bottom: 18px;
-        }
-
-        /* CTA */
-
-        .cta {
-            background: var(--orange);
-            color: var(--white);
-            text-align: center;
-            padding: 75px 20px;
-        }
-
-        .cta h2 {
-            font-size: clamp(27px, 4vw, 38px);
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 28px;
-            color: #fffaf6;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--white);
-            color: var(--orange-dark);
-            padding: 13px 25px;
-            border-radius: 5px;
-            font-weight: 800;
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            background: var(--light-orange);
-        }
-
-        /* Footer */
-
-        footer {
-            background: #242424;
-            color: var(--white);
-            padding: 45px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 35px;
-            margin-bottom: 35px;
-        }
-
-        .footer-about h3 {
-            color: var(--orange);
-            font-size: 21px;
-            margin-bottom: 14px;
-        }
-
-        footer p {
-            color: #d0d0d0;
-            font-size: 14px;
-        }
-
-        .footer-links h4 {
-            margin-bottom: 14px;
-        }
-
-        .footer-links a {
-            display: block;
-            color: #d0d0d0;
-            font-size: 14px;
-            margin-bottom: 9px;
-        }
-
-        .footer-links a:hover {
-            color: var(--orange);
-        }
-
-        .copyright {
-            border-top: 1px solid #444;
-            padding-top: 18px;
-            text-align: center;
-            color: #c5c5c5;
-            font-size: 13px;
-        }
-
-        /* Mobile */
-
-        @media (max-width: 900px) {
-            .navbar {
-                flex-direction: column;
-                padding: 18px 0;
-            }
-
-            .nav-links {
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 13px 18px;
-            }
-
-            .intro-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .values-grid,
-            .partner-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero {
-                padding: 65px 0;
-            }
-
-            section {
-                padding: 55px 0;
-            }
-
-            .values-grid,
-            .partner-grid,
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                gap: 10px 14px;
-            }
-
-            .nav-links a {
-                font-size: 13px;
-            }
-
-            .nav-links .contact-link {
-                padding: 8px 12px;
-            }
-
-            .intro-panel {
-                padding: 25px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f36b21">
+
+<title>Our Partners | One Impact Social Development Network</title>
+<meta name="description" content="Discover how One Impact Social Development Network builds meaningful partnerships to support empowerment, inclusion and sustainable development.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --orange: #f36b21;
+    --orange-dark: #d9510d;
+    --orange-light: #fff0e5;
+    --cream: #fffaf5;
+    --white: #ffffff;
+    --dark: #242424;
+    --text: #66615d;
+    --border: #eee8e2;
+    --black: #191919;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+.container {
+    width: 88%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--orange-dark);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Manrope', sans-serif;
+}
+
+/* NAVIGATION */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    color: var(--orange);
+    font-family: 'Manrope', sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.logo span {
+    display: block;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--orange);
+}
+
+.nav-links .contact-link {
+    background: var(--orange);
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 4px;
+}
+
+.nav-links .contact-link:hover {
+    background: var(--orange-dark);
+    color: var(--white);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--dark);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    background: var(--black);
+    color: var(--white);
+    padding: 105px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border: 1px solid rgba(243,107,33,0.25);
+    border-radius: 50%;
+    top: -200px;
+    left: -120px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(243,107,33,0.25);
+    border-radius: 50%;
+    bottom: -200px;
+    right: -100px;
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 1.12;
+    letter-spacing: -2.5px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--orange);
+}
+
+.hero p {
+    max-width: 760px;
+    margin: auto;
+    font-size: 16px;
+    color: #c9c9c9;
+}
+
+/* INTRODUCTION */
+
+.introduction {
+    padding: 100px 0;
+    background: var(--cream);
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.intro-text h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.2;
+    margin: 18px 0 22px;
+    letter-spacing: -1.5px;
+}
+
+.intro-text p {
+    color: var(--text);
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+
+.intro-panel {
+    background: var(--white);
+    padding: 45px;
+    border-left: 5px solid var(--orange);
+    box-shadow: 0 15px 40px rgba(50,30,15,0.05);
+}
+
+.intro-panel small {
+    color: var(--orange-dark);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.intro-panel h3 {
+    font-size: 25px;
+    line-height: 1.3;
+    margin: 15px 0;
+}
+
+.intro-panel p {
+    color: var(--text);
+    font-size: 15px;
+}
+
+/* PARTNERSHIP VALUES */
+
+.values {
+    background: var(--white);
+    padding: 100px 0;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.2;
+    margin: 15px 0;
+    letter-spacing: -1.5px;
+}
+
+.section-heading p {
+    color: var(--text);
+    font-size: 15px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.value-card {
+    background: var(--cream);
+    padding: 35px 28px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(50,30,15,0.08);
+}
+
+.value-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--orange-light);
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+.value-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.value-card p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* PARTNER SHOWCASE */
+
+.partners {
+    background: var(--cream);
+    padding: 100px 0;
+}
+
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.partner-card {
+    min-height: 220px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+}
+
+.partner-placeholder {
+    width: 65px;
+    height: 65px;
+    background: var(--orange-light);
+    color: var(--orange-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    margin-bottom: 18px;
+}
+
+.partner-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.partner-card p {
+    color: var(--text);
+    font-size: 13px;
+}
+
+/* COLLABORATION */
+
+.collaboration {
+    background: var(--white);
+    padding: 100px 0;
+}
+
+.collaboration-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.collaboration-content h2 {
+    font-size: clamp(32px, 4vw, 45px);
+    line-height: 1.2;
+    margin: 16px 0 22px;
+    letter-spacing: -1.5px;
+}
+
+.collaboration-content p {
+    color: var(--text);
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+
+/* CTA */
+
+.cta {
+    background: var(--orange);
+    color: var(--white);
+    text-align: center;
+    padding: 85px 20px;
+}
+
+.cta h2 {
+    font-size: clamp(32px, 4vw, 45px);
+    margin-bottom: 17px;
+    line-height: 1.2;
+}
+
+.cta p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #fff5ed;
+    font-size: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--white);
+    color: var(--orange-dark);
+    padding: 15px 28px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 13px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: var(--orange-light);
+}
+
+/* FOOTER */
+
+footer {
+    background: #171717;
+    color: var(--white);
+    padding: 65px 0 22px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    margin-bottom: 45px;
+}
+
+.footer-about h3 {
+    color: var(--orange);
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.footer-about p {
+    max-width: 350px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.footer-links h4 {
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.footer-links a {
+    display: block;
+    width: fit-content;
+    color: #aaa;
+    font-size: 13px;
+    margin-bottom: 11px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--orange);
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-dot {
+    display: inline-flex;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--orange);
+}
+
+.copyright {
+    border-top: 1px solid #333;
+    padding-top: 22px;
+    color: #888;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 1000px) {
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 800px) {
+    .navbar {
+        min-height: 75px;
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 5px 0 20px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px 5px;
+        font-size: 14px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links .contact-link {
+        text-align: center;
+        margin-top: 12px;
+        border-bottom: none;
+    }
+
+    .intro-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .values-grid,
+    .partner-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    .hero {
+        padding: 75px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .introduction,
+    .values,
+    .partners,
+    .collaboration {
+        padding: 75px 0;
+    }
+
+    .values-grid,
+    .partner-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-panel {
+        padding: 30px 25px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .cta {
+        padding: 70px 20px;
+    }
+
+    footer {
+        padding-top: 50px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -478,12 +644,19 @@
             <span>Social Development Network</span>
         </a>
 
-        <nav class="nav-links" aria-label="Main navigation">
+        <button class="menu-toggle" id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navLinks">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="programmes.html">Programmes</a>
             <a href="impact.html">Our Impact</a>
-            <a href="partners.html" class="active">Partners</a>
+            <a href="partners.html" class="active" aria-current="page">Partners</a>
             <a href="contact.html" class="contact-link">Contact Us</a>
         </nav>
 
@@ -492,12 +665,16 @@
 
 <main>
 
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="hero">
-        <div class="container">
+        <div class="container hero-content">
+
             <span class="eyebrow">OUR PARTNERS</span>
 
-            <h1>Stronger Together, Creating Greater Impact</h1>
+            <h1>
+                Stronger Together,<br>
+                Creating <span>Greater Impact.</span>
+            </h1>
 
             <p>
                 Meaningful social change is built through collaboration.
@@ -505,15 +682,16 @@
                 partnerships are essential to creating opportunities,
                 strengthening communities and building a more inclusive future.
             </p>
+
         </div>
     </section>
 
-    <!-- Introduction -->
-    <section>
+    <!-- INTRODUCTION -->
+    <section class="introduction">
         <div class="container intro-content">
 
             <div class="intro-text">
-                <span class="section-heading label">Working Together</span>
+                <span class="section-tag">Working Together</span>
 
                 <h2>Partnerships That Drive Positive Change</h2>
 
@@ -536,6 +714,8 @@
             </div>
 
             <div class="intro-panel">
+                <small>OUR PHILOSOPHY</small>
+
                 <h3>Our Partnership Philosophy</h3>
 
                 <p>
@@ -550,12 +730,12 @@
         </div>
     </section>
 
-    <!-- Partnership Values -->
+    <!-- PARTNERSHIP VALUES -->
     <section class="values">
         <div class="container">
 
             <div class="section-heading">
-                <span class="label">Our Approach</span>
+                <span class="section-tag">Our Approach</span>
 
                 <h2>What We Value in Partnerships</h2>
 
@@ -625,12 +805,12 @@
         </div>
     </section>
 
-    <!-- Partner Showcase -->
+    <!-- PARTNER SHOWCASE -->
     <section class="partners">
         <div class="container">
 
             <div class="section-heading">
-                <span class="label">Our Network</span>
+                <span class="section-tag">Our Network</span>
 
                 <h2>Our Partners and Collaborators</h2>
 
@@ -666,11 +846,11 @@
         </div>
     </section>
 
-    <!-- Collaboration -->
+    <!-- COLLABORATION -->
     <section class="collaboration">
         <div class="container collaboration-content">
 
-            <span class="section-heading label">Building Connections</span>
+            <span class="section-tag">Building Connections</span>
 
             <h2>Let's Create Impact Together</h2>
 
@@ -707,10 +887,11 @@
 
 </main>
 
+<!-- FOOTER -->
 <footer>
     <div class="container">
 
-        <div class="footer-content">
+        <div class="footer-grid">
 
             <div class="footer-about">
                 <h3>One Impact Social Development Network</h3>
@@ -722,7 +903,7 @@
             </div>
 
             <div class="footer-links">
-                <h4>Quick Links</h4>
+                <h4>Explore</h4>
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="programmes.html">Programmes</a>
@@ -730,9 +911,33 @@
             </div>
 
             <div class="footer-links">
-                <h4>Connect With Us</h4>
+                <h4>Get Involved</h4>
                 <a href="partners.html">Our Partners</a>
                 <a href="contact.html">Contact Us</a>
+            </div>
+
+            <div class="footer-links footer-social">
+                <h4>Let's Connect</h4>
+
+                <a href="https://www.instagram.com/TheOneImpactSDN/" target="_blank" rel="noopener noreferrer">
+                    <span class="social-dot"></span> Instagram
+                </a>
+
+                <a href="https://web.facebook.com/TheOneImpactSDN" target="_blank" rel="noopener noreferrer">
+                    <span class="social-dot"></span> Facebook
+                </a>
+
+                <a href="https://www.linkedin.com/company/TheOneImpactSDN" target="_blank" rel="noopener noreferrer">
+                    <span class="social-dot"></span> LinkedIn
+                </a>
+
+                <a href="https://www.youtube.com/@TheOneImpactSDN" target="_blank" rel="noopener noreferrer">
+                    <span class="social-dot"></span> YouTube
+                </a>
+
+                <a href="https://twitter.com/TheOneImpactSDN" target="_blank" rel="noopener noreferrer">
+                    <span class="social-dot"></span> X (Twitter)
+                </a>
             </div>
 
         </div>
@@ -746,10 +951,32 @@
 </footer>
 
 <script>
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("show");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("show");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+    });
+});
 </script>
 
 </body>
 </html>
-```
