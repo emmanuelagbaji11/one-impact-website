@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -781,10 +780,96 @@
       margin-top: 22px;
     }
 
+    /* Social Media Section */
+
+    .social-section {
+      padding: 85px 0;
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .social-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .social-heading .eyebrow {
+      justify-content: center;
+    }
+
+    .social-heading h2 {
+      font-size: clamp(30px, 4vw, 43px);
+    }
+
+    .social-heading p {
+      max-width: 560px;
+      margin: 16px auto 0;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .social-card {
+      min-height: 145px;
+      padding: 24px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: 0.25s ease;
+    }
+
+    .social-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--orange);
+      box-shadow: var(--shadow);
+    }
+
+    .social-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 13px;
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      border-radius: 12px;
+      font-family: "Manrope", sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .social-card strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .social-card span {
+      margin-top: 4px;
+      color: var(--text);
+      font-size: 10px;
+    }
+
+    .social-card:hover .social-icon {
+      background: var(--orange);
+      color: white;
+    }
+
     /* Contact CTA */
 
     .contact-cta {
-      padding: 0 0 100px;
+      padding: 100px 0;
     }
 
     .cta-box {
@@ -889,6 +974,32 @@
       margin-top: 12px;
     }
 
+    .footer-social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 17px;
+    }
+
+    .footer-social-links a {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      font-size: 11px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .footer-social-links a:hover {
+      background: var(--orange);
+      color: white;
+      transform: translateY(-3px);
+    }
+
     .footer-bottom {
       border-top: 1px solid var(--border);
       padding-top: 22px;
@@ -930,6 +1041,10 @@
 
       .about-grid {
         gap: 45px;
+      }
+
+      .social-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
@@ -1030,6 +1145,10 @@
         align-items: flex-start;
         flex-direction: column;
       }
+
+      .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 520px) {
@@ -1115,6 +1234,20 @@
 
       .involved-card {
         padding: 27px;
+      }
+
+      .social-section {
+        padding: 65px 0;
+      }
+
+      .social-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .social-card {
+        min-height: 130px;
+        padding: 18px 10px;
       }
 
       .cta-box {
@@ -1538,6 +1671,87 @@
     </section>
 
 
+    <!-- FOLLOW US SECTION -->
+    <section class="social-section" id="follow-us">
+      <div class="container">
+
+        <div class="social-heading">
+          <span class="eyebrow">Stay Connected</span>
+          <h2>Follow Our Journey.</h2>
+          <p>
+            Keep up with our activities, initiatives, stories and updates.
+            Connect with One Impact across our social media platforms.
+          </p>
+        </div>
+
+        <div class="social-grid">
+
+          <a
+            href="https://www.instagram.com/TheOneImpactSDN/"
+            class="social-card"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow One Impact on Instagram"
+          >
+            <div class="social-icon">IG</div>
+            <strong>Instagram</strong>
+            <span>@TheOneImpactSDN</span>
+          </a>
+
+          <a
+            href="https://web.facebook.com/TheOneImpactSDN"
+            class="social-card"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow One Impact on Facebook"
+          >
+            <div class="social-icon">f</div>
+            <strong>Facebook</strong>
+            <span>@TheOneImpactSDN</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/company/TheOneImpactSDN"
+            class="social-card"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Connect with One Impact on LinkedIn"
+          >
+            <div class="social-icon">in</div>
+            <strong>LinkedIn</strong>
+            <span>TheOneImpactSDN</span>
+          </a>
+
+          <a
+            href="https://www.youtube.com/@TheOneImpactSDN"
+            class="social-card"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Subscribe to One Impact on YouTube"
+          >
+            <div class="social-icon">▶</div>
+            <strong>YouTube</strong>
+            <span>@TheOneImpactSDN</span>
+          </a>
+
+          <a
+            href="https://twitter.com/TheOneImpactSDN"
+            class="social-card"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow One Impact on X"
+          >
+            <div class="social-icon">X</div>
+            <strong>X</strong>
+            <span>@TheOneImpactSDN</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
     <!-- CONTACT CALL TO ACTION -->
     <section class="contact-cta">
       <div class="container">
@@ -1607,9 +1821,51 @@
           <h4>Let's Connect</h4>
           <p>Interested in our work?</p>
           <p>Visit our contact page to reach our team.</p>
+
           <a href="contact.html" class="text-link">
             Contact Us <span>→</span>
           </a>
+
+          <h4 style="margin-top: 25px; margin-bottom: 12px;">Follow Us</h4>
+
+          <div class="footer-social-links">
+
+            <a
+              href="https://www.instagram.com/TheOneImpactSDN/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >IG</a>
+
+            <a
+              href="https://web.facebook.com/TheOneImpactSDN"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >f</a>
+
+            <a
+              href="https://www.linkedin.com/company/TheOneImpactSDN"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >in</a>
+
+            <a
+              href="https://www.youtube.com/@TheOneImpactSDN"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >▶</a>
+
+            <a
+              href="https://twitter.com/TheOneImpactSDN"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X"
+            >X</a>
+
+          </div>
         </div>
 
       </div>
@@ -1654,4 +1910,3 @@
 
 </body>
 </html>
-```
